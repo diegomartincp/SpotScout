@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
 import { SentimientoComponent } from './sentimiento/sentimiento.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
