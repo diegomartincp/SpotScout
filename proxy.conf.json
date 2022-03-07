@@ -1,0 +1,6 @@
+{
+  "/api": {
+      "target": "https:api.SpotScout.com",
+      "secure": true
+  }
+}
