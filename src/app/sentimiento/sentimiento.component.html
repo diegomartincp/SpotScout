@@ -2,7 +2,7 @@
   <div class="input-group p-3 w-50 ">
     <input type="text" class="form-control" placeholder="Texto a analizar" aria-label="Recipient's username" aria-describedby="button-addon2" #texto>
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="get_resultado_sentimiento(texto.value)">Realizar análisis</button>
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="llamada_servicio_sentimiento(texto.value)">Realizar análisis</button>
     </div>
   </div>
 </div>

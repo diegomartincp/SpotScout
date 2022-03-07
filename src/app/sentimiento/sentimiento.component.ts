@@ -20,9 +20,9 @@ export class SentimientoComponent implements OnInit {
     //En inicio no hace nada
   }
 
-  get_resultado_sentimiento(texto:string){
+  llamada_servicio_sentimiento(texto:string){
     //Asignamos la variable resultado usando el servicio
-    this.resultado = this.service.devolver_lo_mismo(texto)
+    this.resultado = this.service.get_sentimiento(texto)
 
   }
 
