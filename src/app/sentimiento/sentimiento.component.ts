@@ -12,9 +12,11 @@ export class SentimientoComponent implements OnInit {
   //Variable texto
   texto = "";
   //Variable resultado
-  resultado="-";
+  resultado = "";
 
-  constructor(public service: ApiComunicationService) { } //Se añade en este paréntesis el servicio
+  constructor(public service: ApiComunicationService) {
+
+  }
 
   ngOnInit(): void {
     //En inicio no hace nada
@@ -22,8 +24,9 @@ export class SentimientoComponent implements OnInit {
 
   llamada_servicio_sentimiento(texto:string){
     //Asignamos la variable resultado usando el servicio
-    this.resultado = this.service.get_sentimiento(texto)
+    this.resultado = "-> "+this.service.get_sentimiento(texto)
 
   }
+
 
 }
