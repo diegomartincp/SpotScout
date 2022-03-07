@@ -7,7 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
 import { SentimientoComponent } from './sentimiento/sentimiento.component';
-
+import{ HttpClientModule } from '@angular/common/http';//
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { SentimientoComponent } from './sentimiento/sentimiento.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
