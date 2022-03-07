@@ -13,5 +13,8 @@ get_resultado(){
 
   return "0.5";
 }
+devolver_lo_mismo(texto_random:string){
+  return "Servicio -> "+texto_random
+}
 
 }

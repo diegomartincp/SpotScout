@@ -17,13 +17,13 @@ export class SentimientoComponent implements OnInit {
   constructor(public service: ApiComunicationService) { } //Se añade en este paréntesis el servicio
 
   ngOnInit(): void {
-
+    //En inicio no hace nada
   }
 
   get_resultado_sentimiento(texto:string){
     //Asignamos la variable resultado usando el servicio
-    this.resultado = texto
-    //this.resultado = this.service.get_resultado()
+    this.resultado = this.service.devolver_lo_mismo(texto)
+
   }
 
 }
