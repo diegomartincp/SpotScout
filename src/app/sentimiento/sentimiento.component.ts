@@ -12,7 +12,8 @@ export class SentimientoComponent implements OnInit {
   //Variable texto
   texto = "";
   //Variable resultado
-  resultado = "";
+  resultado = " -> Aquí aparecerá el resultado";
+  //resultado = "";
 
   constructor(public service: ApiComunicationService) {
 
@@ -22,11 +23,9 @@ export class SentimientoComponent implements OnInit {
     //En inicio no hace nada
   }
 
-  llamada_servicio_sentimiento(texto:string){
-    //Asignamos la variable resultado usando el servicio
-    this.resultado = "-> "+this.service.get_sentimiento(texto)
 
+  async get_api_comunication_result(texto_a_analizar:string){
+    (await this.service.get_resultado_api(texto_a_analizar)).subscribe(data => (this.resultado = data.resultado));
   }
-
 
 }
