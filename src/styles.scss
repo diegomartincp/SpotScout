@@ -2,6 +2,9 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+$gris_claro: #EEEEEE;
+$azul_principal: #1C658C;
+
 .logo-image{
 left:10px;
 right:10px;
@@ -9,24 +12,51 @@ right:10px;
 
 //Footer
 .gris-background{
-background-color: #EEEEEE;
+background-color: $gris_claro;
 }
 
 .navbar{
-  background-color: #1C658C;
+  background-color: $azul_principal;
+
 }
 
 .navbar-brand{
+  background-color: $azul_principal;
+  justify-content: left;
+  margin-left: 50px;
+}
+
+#navbarNav{
+  justify-content: right;
+  margin-right: 50px;
+}
+
+.nav-link{
   color: white;
+  &:hover{
+    color: yellow;
+  }
 }
 
 .btn_azul_primario{
-  background-color: #1C658C;
+  background-color: $azul_principal;
   color:white;
 }
-.link_principal_sin_decoracion:hover {
-  text-decoration: none;
+.link_principal_sin_decoracion{
   color: white;
+  &:hover{
+    color: yellow;
+  }
+}
+
+.btn-outline-secondary{
+  background-color: $azul_principal;
+  color: white;
+  &:hover{
+    background-color: white;
+    color: $azul_principal;
+    font-weight: 500;
+  }
 }
 
 
