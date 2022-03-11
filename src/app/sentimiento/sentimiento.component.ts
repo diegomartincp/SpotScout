@@ -9,11 +9,8 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
 
 //Componente sentimiento
 export class SentimientoComponent implements OnInit {
-  //Variable texto
-  texto = "";
   //Variable resultado
-  resultado = " -> Aquí aparecerá el resultado";
-  //resultado = "";
+  resultado: any;
 
   constructor(public service: ApiComunicationService) {
 
@@ -23,9 +20,21 @@ export class SentimientoComponent implements OnInit {
     //En inicio no hace nada
   }
 
-
   async get_api_comunication_result(texto_a_analizar:string){
     (await this.service.get_resultado_api(texto_a_analizar)).subscribe(data => (this.resultado = data.resultado));
+
   }
 
+
+
 }
+
+
+/**
+ * const that = this;
+    this.dataService.GetFormById(+id).subscribe(response => {
+      console.log(response);
+      // const temp = response['TemplateJson'];
+      that.data = response['TemplateJson'];
+    })
+ */
