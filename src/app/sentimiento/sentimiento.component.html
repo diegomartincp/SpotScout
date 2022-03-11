@@ -13,9 +13,17 @@
     <div class="card-header">
       Resultados:
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ resultado }}</li>
-    </ul>
+    <div class="d-grid justify-content-center">
+      <br>
+      <img src="{{ imagen }}" #ImagenResultado width="150" height="150" class="align-center" alt="">
+      <br>
+      <div class="progress" style="height: 20px;">
+        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuemin="-1" aria-valuemax="1"></div>
+      </div>
+      <p class="text-center">{{ resultado }}</p>
+      <p class="text-center">Su resultado es {{ resultadoEsc }}</p>
+    </div>
+
   </div>
 </div>
 
