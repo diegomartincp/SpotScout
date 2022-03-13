@@ -11,7 +11,7 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
 export class SentimientoComponent implements OnInit {
   //Variable resultado
   resultado : Number = 0;
-  imagen = "";
+  imagen = "../assets/images/experience.png";
   resultadoEsc ="";
 
   constructor(public service: ApiComunicationService) {
@@ -19,8 +19,7 @@ export class SentimientoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //En inicio no hace nada
-    this.imagen = "../assets/images/experience.png";
+  //En inicio no es necesario hacer nada
   }
 
   async get_api_comunication_result(texto_a_analizar:string){

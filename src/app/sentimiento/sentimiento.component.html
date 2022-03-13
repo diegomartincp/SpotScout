@@ -1,6 +1,6 @@
   <div class="row d-flex justify-content-center"> <!-- Le cramos para centrar el resto haciendo de este un flex-->
   <div class="input-group p-3 w-50 ">
-    <input type="text" class="form-control" placeholder="Texto a analizar" aria-label="Recipient's username" aria-describedby="button-addon2" #texto>
+    <input type="text" class="form-control" placeholder="Introduzca el texto a analizar"  aria-describedby="button-addon2" #texto>
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="get_api_comunication_result(texto.value)">Realizar análisis</button>
     </div>
@@ -14,16 +14,22 @@
       Resultados:
     </div>
     <div class="d-grid justify-content-center">
-      <br>
-      <img src="{{ imagen }}" #ImagenResultado width="150" height="150" class="align-center" alt="">
-      <br>
-      <div class="progress" style="height: 20px;">
-        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuemin="-1" aria-valuemax="1"></div>
-      </div>
+      <div class="text-center m-2 mt-3"> <img src="{{ imagen }}" #ImagenResultado width="100" height="100"  alt=""></div>
       <p class="text-center">{{ resultado }}</p>
-      <p class="text-center">Su resultado es {{ resultadoEsc }}</p>
+      <p class="text-center fw-bold">Resultado: {{ resultadoEsc }}</p>
     </div>
 
+  </div>
+</div>
+
+<div class="d-flex justify-content-center m-5">
+  <div class="card infoAnalisisSentimiento border card_border_grey" style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title">¿Qué es el Análisis de Sentimiento?</h5>
+      <p class="card-text ">El análisis de sentimiento es determinar las emociones que se esconden detrás de un conjunto
+        de palabras. Consiste en un método automático mediante el que se obtienen datos relevantes del cliente (gustos,
+        valoraciones, actos de consumo).</p>
+    </div>
   </div>
 </div>
 

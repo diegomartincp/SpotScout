@@ -2,10 +2,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+/*Variables*/
 $gris_claro: #EEEEEE;
 $azul_principal: #1C658C;
 $beige: #D8D2CB;
 
+/*Reglas propias*/
 .logo-image{
 left:10px;
 right:10px;
@@ -16,6 +18,7 @@ right:10px;
 background-color: $gris_claro;
 }
 
+//Navbar
 .navbar{
   background-color: $azul_principal;
 
@@ -34,18 +37,26 @@ background-color: $gris_claro;
 
 .nav-link{
   color: white;
-  &:hover{
+  &:hover{  //Regla anidada
     color: yellow;
   }
 }
-
+//Tarjetas
+.card_border_grey{
+  border-color: $gris_claro;
+}
+.card_border_blue{
+  border-color: $azul_principal;
+}
+//Botones
 .btn_azul_primario{
   background-color: $azul_principal;
   color:white;
 }
+
 .link_principal_sin_decoracion{
   color: white;
-  &:hover{
+  &:hover{  //Regla anidada
     color: yellow;
   }
 }
@@ -53,7 +64,7 @@ background-color: $gris_claro;
 .btn-outline-secondary{
   background-color: $azul_principal;
   color: white;
-  &:hover{
+  &:hover{  //Regla anidada
     background-color: white;
     color: $azul_principal;
     font-weight: 500;
@@ -65,4 +76,8 @@ background-color: $gris_claro;
   border-color: white;
 }
 
+//Padding al body del index para que se vea toda la página
+body {
+  padding-bottom: 20px;
+}
 
