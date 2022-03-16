@@ -1,4 +1,4 @@
-#Trello
+# Trello
 https://trello.com/b/YZDvanV5/spotscout
 
 # Paleta de colores
