@@ -1,3 +1,6 @@
+#Trello
+https://trello.com/b/YZDvanV5/spotscout
+
 # Paleta de colores
 https://colorhunt.co/palette/1c658c398ab9d8d2cbeeeeee
 
