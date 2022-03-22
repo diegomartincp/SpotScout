@@ -9,7 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
 import { SentimientoComponent } from './sentimiento/sentimiento.component';
-import{ HttpClientModule } from '@angular/common/http';//
+import{ HttpClientModule } from '@angular/common/http'; //Se importa la librería para la llamada a la api
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import{ HttpClientModule } from '@angular/common/http';//
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule  //Se importa
   ],
   providers: [ApiComunicationService],
   bootstrap: [AppComponent]

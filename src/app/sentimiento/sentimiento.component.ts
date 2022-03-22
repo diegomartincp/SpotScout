@@ -23,7 +23,7 @@ export class SentimientoComponent implements OnInit {
   }
 
   async get_api_comunication_result(texto_a_analizar:string){
-    (await this.service.get_resultado_api(texto_a_analizar)).subscribe(data => {this.resultado = data.resultado + 1000;
+    (await this.service.get_resultado_api(texto_a_analizar)).subscribe(data => {this.resultado = data.resultado;
       if(this.resultado > 0){
       this.imagen = "../assets/images/feliz.png";
       this.resultadoEsc = "Positivo"
