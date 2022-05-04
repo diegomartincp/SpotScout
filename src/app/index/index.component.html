@@ -1,81 +1,151 @@
 <body>
 <div class="jumbotron m-5">
-  <h1 class="display-4 fw-bold texto-presentacion">Bienvenidos a SpotScout!</h1>
-  <p class="lead">Bienvenido a la versión Beta de SpotScout. Esta aplicación se basa en el análisis de sentimiento en
-    posts de periódicos y redes sociales para ofrecerte de forma visualizar el sentimiento general de un lugar para que
-    encuentres el mejor sitio para vivir.</p>
+  <h1 class="display-4 fw-bold texto-presentacion">Bienvenidos a SpotScout v1.2!</h1>
+  <p class="lead">Esta aplicación se basa en el análisis de sentimiento en
+    posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
+    seleccionado por estos.<br>
+    Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
+    de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
   <hr class="my-4">
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4 my-2">
-  <div class="col">
-    <div class="card bg-dark text-white">
-      <img
-        src="https://mdbootstrap.com/img/new/slides/017.webp"
-        class="card-img"
-        alt="..."
-      />
-      <div class="card-img-overlay">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in to additional
-          content. This content is a little bit longer.
-        </p>
-        <p class="card-text">Last updated 3 mins ago</p>
+<div class="row row-cols-1 row-cols-md-2 g-4 my-2 m-5">
+<div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+  <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="3"
+      aria-label="Slide 4"
+    ></button>
+  </div>
+  <div class="carousel-inner relative w-full overflow-hidden">
+    <div class="carousel-item active relative float-left w-full">
+      <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(123).jpg" class="block w-full" />
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
+      </div>
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h4 class="text-xl">Conocer datos sobre un barrio</h4>
+        <p>Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio seleccionado.</p>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full">
+      <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(124).jpg" class="block w-full" />
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
+      </div>
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h4 class="text-xl">¿Qué restaurantes hay en la zona?</h4>
+        <p>Se podrá obtener una tabala con los 10 mejores restaurantes, con sus respectivos calificaciones, nombres y etiquetas asociados.</p>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full">
+      <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(125).jpg" class="block w-full" />
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
+      </div>
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h4 class="text-xl">Gráfica Tweets</h4>
+        <p>Se mostrarán gráficas que mostrarán el análisis del sentimiento de odio sobre una cierta cantidad de tweets.</p>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full">
+      <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(120).jpg" class="block w-full" />
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
+      </div>
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h4 class="text-xl">Análisis de noticias de periódicos</h4>
+        <p>Mostraremos una media del sentimiento de odio de las noticias de periódicos publicados durante una fecha determinada sobre un barrio.</p>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card bg-dark text-white">
-      <img
-        src="https://mdbootstrap.com/img/new/slides/017.webp"
-        class="card-img"
-        alt="..."
-      />
-      <div class="card-img-overlay">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in to additional
-          content. This content is a little bit longer.
-        </p>
-        <p class="card-text">Last updated 3 mins ago</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-  <div class="card bg-dark text-white">
-    <img
-      src="https://mdbootstrap.com/img/new/slides/017.webp"
-      class="card-img"
-      alt="..."
-    />
-    <div class="card-img-overlay">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to additional
-        content. This content is a little bit longer.
-      </p>
-      <p class="card-text">Last updated 3 mins ago</p>
-    </div>
-  </div>
-  </div>
-  <div class="col">
-  <div class="card bg-dark text-white">
-    <img
-      src="https://mdbootstrap.com/img/new/slides/017.webp"
-      class="card-img"
-      alt="..."
-    />
-    <div class="card-img-overlay">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to additional
-        content. This content is a little bit longer.
-      </p>
-      <p class="card-text">Last updated 3 mins ago</p>
-    </div>
-  </div>
+  <button
+    class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-4 g-4 my-2 m-5">
+  <div class="col">
+    <div class="card">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+      <div class="card-body">
+        <h5 class="card-title">Conocer datos sobre un barrio</h5>
+        <p class="card-text">
+          Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio seleccionado.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body">
+        <h5 class="card-title">¿Qué restaurantes hay en la zona?</h5>
+        <p class="card-text">
+          Se podrá obtener una tabala con los 10 mejores restaurantes, con sus respectivos calificaciones, nombres y etiquetas asociados.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Gráfica Tweets</h5>
+        <p class="card-text">Se mostrarán gráficas que mostrarán el análisis del sentimiento de odio sobre una cierta cantidad de tweets.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Análisis de noticias de periódicos</h5>
+        <p class="card-text">
+          Mostraremos una media del sentimiento de odio de las noticias de periódicos publicados durante una fecha determinada sobre un barrio.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
