@@ -9,7 +9,9 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
 import { SentimientoComponent } from './sentimiento/sentimiento.component';
-import{ HttpClientModule } from '@angular/common/http'; //Se importa la librería para la llamada a la api
+import{ HttpClientModule } from '@angular/common/http';
+import { AccederComponent } from './acceder/acceder.component';
+import { LoginComponent } from './login/login.component'; //Se importa la librería para la llamada a la api
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import{ HttpClientModule } from '@angular/common/http'; //Se importa la librerí
     NavComponent,
     FooterComponent,
     IndexComponent,
-    SentimientoComponent
+    SentimientoComponent,
+    AccederComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
