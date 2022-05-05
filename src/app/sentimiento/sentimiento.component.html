@@ -1,8 +1,11 @@
-  <div class="row d-flex justify-content-center"> <!-- Le cramos para centrar el resto haciendo de este un flex-->
+<div class="row d-flex justify-content-center">
+  <!-- Le cramos para centrar el resto haciendo de este un flex-->
   <div class="input-group p-3 w-50 ">
-    <input type="text" class="form-control" placeholder="Introduzca el texto a analizar"  aria-describedby="button-addon2" #texto>
+    <input type="text" class="form-control" placeholder="Introduzca el texto a analizar"
+      aria-describedby="button-addon2" #texto>
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="get_api_comunication_result(texto.value)">Realizar análisis</button>
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+        (click)="get_api_comunication_result(texto.value)">Realizar análisis</button>
     </div>
   </div>
 </div>
@@ -14,7 +17,7 @@
       Resultados:
     </div>
     <div class="d-grid justify-content-center">
-      <div class="text-center m-2 mt-3"> <img src="{{ imagen }}" #ImagenResultado width="100" height="100"  alt=""></div>
+      <div class="text-center m-2 mt-3"> <img src="{{ imagen }}" #ImagenResultado width="100" height="100" alt=""></div>
       <p class="text-center">{{ resultado }}</p>
       <p class="text-center fw-bold">Resultado: {{ resultadoEsc }}</p>
     </div>
@@ -32,8 +35,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
