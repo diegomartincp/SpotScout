@@ -6,6 +6,7 @@ import { AccederComponent } from './acceder/acceder.component';
 import { LoginComponent } from './login/login.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 
+
 //const routes: Routes = [];
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
