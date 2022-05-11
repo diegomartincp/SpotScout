@@ -10,30 +10,26 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
 //Componente sentimiento
 export class SentimientoComponent implements OnInit {
   //Variable resultado
-  resultado : number = 0;
+  //resultado : double = 0.0;
+  resultado: string = "";
   imagen = "../assets/images/experience.png";
-  resultadoEsc ="";
+  resultadoEsc = "0";
 
-  constructor(public service: ApiComunicationService) {
-
-  }
+  constructor(
+    public service: ApiComunicationService
+    ) {}
 
   ngOnInit(): void {
   //En inicio no es necesario hacer nada
   }
 
-  async get_api_comunication_result(texto_a_analizar:string){
-    this.service.get_resultado_api(texto_a_analizar).subscribe(data => {this.resultado = data.resultado;
-      if(this.resultado > 0){
-      this.imagen = "../assets/images/feliz.png";
-      this.resultadoEsc = "Positivo"
-    }else if (this.resultado < 0){
-      this.imagen = "../assets/images/triste.png";
-      this.resultadoEsc = "Negativo"
-    }else{
-      this.imagen = "../assets/images/experience.png";
-      this.resultadoEsc = "Neutral"
-    }});
+  get_api_comunication_result(){
+    console.log("hola 1")
+    this.service.get_resultado_api().subscribe(data => {
+      console.log(data.resultado);
+      this.resultadoEsc = data.resultado;
+    });
+    console.log("hola 2")
 
   }
 

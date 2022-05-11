@@ -14,15 +14,23 @@ export class ApiComunicationService {
 constructor(private servicio_api:HttpClient) {  //Inyectar la libreria para el servicio de la api
 
 }
-
+/*
 //Pedimos el resultado a la API
 get_resultado_api(texto_a_analizar:string) : Observable<API_RETURN>{
   const apiUrl = environment.api_url;
-  
+
   const url = apiUrl+'api/analizar'; //La url de la api
   const body = { texto: texto_a_analizar }; //El cuerpo del JSON que se envía a la API
 
   return this.servicio_api.post<API_RETURN>(url,body) //Devolvemos el elemento devuelto por la API de tipo TASK
 } //Esta funciones del servicio http es de tipo OBSERVABLE!
+*/
+get_resultado_api(): Observable<API_RETURN>{
+  let path ='http://127.0.0.1:8000/api/noticias/?ciudad=tres+cantos'
+  console.log(path)
+  console.log(this.servicio_api.get<API_RETURN>(path))
+  console.log("hola 55")
+  return this.servicio_api.get<API_RETURN>(path)
+}
 
 }
