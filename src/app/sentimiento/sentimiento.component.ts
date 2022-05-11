@@ -12,8 +12,12 @@ export class SentimientoComponent implements OnInit {
   //Variable resultado
   //resultado : double = 0.0;
   resultado: string = "";
+  m2: string = "";
+  medio: string = "";
   imagen = "../assets/images/experience.png";
   resultadoEsc = "0";
+  m2Esc = "0";
+  medioEsc = "0";
 
   constructor(
     public service: ApiComunicationService
@@ -21,6 +25,19 @@ export class SentimientoComponent implements OnInit {
 
   ngOnInit(): void {
   //En inicio no es necesario hacer nada
+  }
+
+  funcion_general(query:string){
+    this.service.servicio_delito_odio(query).subscribe(data => {
+      console.log(data.resultado);
+      this.resultadoEsc = data.resultado;
+    });
+    this.service.servicio_precio(query).subscribe(data => {
+      console.log(data.m2);
+      console.log(data.medio);
+      this.m2Esc = data.m2;
+      this.medioEsc = data.medio;
+    });
   }
 
   get_resultado_delito_odio(query:string){
