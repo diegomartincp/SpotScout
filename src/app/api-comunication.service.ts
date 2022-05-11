@@ -25,8 +25,9 @@ get_resultado_api(texto_a_analizar:string) : Observable<API_RETURN>{
   return this.servicio_api.post<API_RETURN>(url,body) //Devolvemos el elemento devuelto por la API de tipo TASK
 } //Esta funciones del servicio http es de tipo OBSERVABLE!
 */
-get_resultado_api(): Observable<API_RETURN>{
-  let path ='http://127.0.0.1:8000/api/noticias/?ciudad=tres+cantos'
+servicio_delito_odio(query:string): Observable<API_RETURN>{
+  let ciudad = query.replace(" ","+")
+  let path ='http://127.0.0.1:8000/api/noticias/?ciudad='+ciudad
   console.log(path)
   console.log(this.servicio_api.get<API_RETURN>(path))
   console.log("hola 55")

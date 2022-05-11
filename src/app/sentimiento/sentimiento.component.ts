@@ -23,9 +23,9 @@ export class SentimientoComponent implements OnInit {
   //En inicio no es necesario hacer nada
   }
 
-  get_api_comunication_result(){
+  get_resultado_delito_odio(query:string){
     console.log("hola 1")
-    this.service.get_resultado_api().subscribe(data => {
+    this.service.servicio_delito_odio(query).subscribe(data => {
       console.log(data.resultado);
       this.resultadoEsc = data.resultado;
     });
