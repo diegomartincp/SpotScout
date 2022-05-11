@@ -5,7 +5,7 @@
       aria-describedby="button-addon2" #texto>
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-        (click)="get_resultado_delito_odio(texto.value)">Realizar análisis</button>
+        (click)="funcion_general(texto.value)">Realizar análisis</button>
     </div>
   </div>
 </div>
@@ -14,14 +14,26 @@
 <div class="d-flex justify-content-center">
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      Resultados:
+      Resultados delito odio:
     </div>
     <div class="d-grid justify-content-center">
       <div class="text-center m-2 mt-3"> <img src="{{ imagen }}" #ImagenResultado width="100" height="100" alt=""></div>
       <p class="text-center">{{ resultado }}</p>
-      <p class="text-center fw-bold">Resultado: {{ resultadoEsc }}</p>
+      <p class="text-center fw-bold">Resultado odio: {{ resultadoEsc }}</p>
     </div>
-
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Resultados precio:
+    </div>
+    <div class="d-grid justify-content-center">
+      <p class="text-center">{{ m2 }}</p>
+      <p class="text-center fw-bold">Resultado m2: {{ m2Esc }}</p>
+      <p class="text-center">{{ medio }}</p>
+      <p class="text-center fw-bold">Resultado medio: {{ medioEsc }}</p>
+    </div>
   </div>
 </div>
 

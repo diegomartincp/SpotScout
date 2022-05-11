@@ -29,8 +29,13 @@ servicio_delito_odio(query:string): Observable<API_RETURN>{
   let ciudad = query.replace(" ","+")
   let path ='http://127.0.0.1:8000/api/noticias/?ciudad='+ciudad
   console.log(path)
-  console.log(this.servicio_api.get<API_RETURN>(path))
-  console.log("hola 55")
+  return this.servicio_api.get<API_RETURN>(path)
+}
+
+servicio_precio(query:string) : Observable<API_RETURN>{
+  let ciudad = query.replace(" ","+")
+  let path ='http://127.0.0.1:8000/api/precio/?ciudad='+ciudad
+  console.log(path)
   return this.servicio_api.get<API_RETURN>(path)
 }
 
