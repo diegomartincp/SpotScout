@@ -12,12 +12,12 @@
     </div>
     <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
       <div class="col d-flex justify-content-center mt-1">
-        <div class="card card border-info text-center" style="width: 47rem;">
-          <div class="card-body">
+        <div class="card card border-rgba(245, 245, 245, .1); text-center" style="width: 47rem; background-color: rgba(245, 245, 245, .4);">
+          <div class="card-body" style="background-color: rgba(245, 245, 245, .1);">
             <h5 class="card-title">Listado de Restaurantes</h5>
             <br>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
+            <ul class="list-group list-group-flush" style="background-color:rgba(245, 245, 245, .4) ;">
+              <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
                 <div class="row">
                   <div class="col-md-6">
                     <h5>Restaurante 1</h5>
@@ -33,7 +33,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
                 <div class="row">
                   <div class="col-md-6">
                     <h5>Restaurante 3</h5>
@@ -49,7 +49,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
                 <div class="row">
                   <div class="col-md-6">
                     <h5>Restaurante 5</h5>
@@ -65,7 +65,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
                 <div class="row">
                   <div class="col-md-6">
                     <h5>Restaurante 7</h5>
@@ -81,7 +81,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
                 <div class="row">
                   <div class="col-md-6">
                     <h5>Restaurante 9</h5>
@@ -102,12 +102,12 @@
         </div>
       </div>
       <div class="col d-flex justify-content-center mt-1">
-        <div class="card card border-warning text-center justify-content-center" style="width: 42rem; height: 55rem;">
-          <div class="justify-content-center">
-            <h5 class="card-title text-center mt-5">Información inmobiliaria del barrio</h5>
+        <div class="card card border-rgba(245, 245, 245, .1); text-center justify-content-center" style="width: 42rem; height: 55rem; background-color: rgba(245, 245, 245, 0.4);">
+          <div class="justify-content-center align-items-center opacity-100">
+            <h5 class="card-title text-center mt-5"><ins>Información inmobiliaria del barrio</ins></h5>
             <div class="row row-cols-1 row-cols-md-2 g-4 mt-1 m-5 ">
               <div class="col ">
-                <div class="card justify-content-center align-items-center " style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center " style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
                   <div class="card-body">
                     <td class="fw-bold">
                       Nº de viviendas en alquiler
@@ -122,7 +122,7 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
                   <div class="card-body">
                     <td class="fw-bold">
                       Nº de viviendas en venta
@@ -137,7 +137,7 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
                   <div class="card-body">
                     <td class="fw-bold">
                       Precio €/m2
@@ -152,7 +152,7 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
                   <div class="card-body">
                     <td class="fw-bold">
                       Precio medio de las viviendas
@@ -169,13 +169,13 @@
           <br>
           <br>
           <div class="mt-5">
-            <h5 class="card-title text-center">Análisis de sentimiento de las noticias del barrio</h5>
+            <h5 class="card-title text-center"><ins>Análisis de sentimiento de las noticias del barrio</ins></h5>
             <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center align-items-center">
               <div class="col">
-                <div class="card justify-content-center m-5" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center m-5" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
                   <div class="card-body">
-                    <td class="fw-bold">
-                      Valor de delito de odio del barrio
+                    <td class="fw-bold rounded">
+                      <ins>Valor de delito de odio del barrio</ins>
                     </td>
                     <p class="text-center">{{ resultado }}</p>
                     <p class="text-center fw-bold">{{ resultadoEsc }}</p>
