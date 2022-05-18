@@ -1,23 +1,26 @@
 <body>
-  <div class="justify-content-center mb-5">
-    <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+  <div class="justify-content-center mb-1">
+    <div id="carouselExampleCaptions" class="carousel slide relative justify-content-center" data-bs-ride="carousel">
       <div class="jumbotron m-5 position-absolute z-index2 fw-bold">
-        <h1 class="display-4 fw-bold texto-presentacion mt-1">Bienvenidos a SpotScout v1.2!</h1>
+        <div class="mt-5">
+        <h1 class="display-4 fw-bold texto-presentacion mt-5 align-items-center">Bienvenidos a SpotScout v1.2!</h1>
         <p class=" fw-bold text-white">Esta aplicación se basa en el análisis de sentimiento en
           posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
           seleccionado por estos.<br>
           Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
           de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
-      </div>
-
-      <div class="position-absolute z-index1 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mb-3">
-        <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
-          aria-describedby="button-addon2" #texto>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            (click)="funcion_general(texto.value)">Realizar búsqueda</button>
+        </div>
+        <div class="z-index1 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-1 mb-5 mt-5">
+          <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
+            aria-describedby="button-addon2" #texto>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+              (click)="funcion_general(texto.value)">Realizar búsqueda</button>
+          </div>
         </div>
       </div>
+
+
 
       <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-1">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -30,7 +33,7 @@
           aria-label="Slide 4"></button>
       </div>
       <div class="carousel-inner relative w-full overflow-hidden">
-        <div class="carousel-item relative float-left w-full">
+        <div class="carousel-item active relative float-left w-full">
           <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
             <img src="../../assets/images/twitter-impact.jpg" class="img-fluid block w-full" />
             <div
@@ -43,7 +46,7 @@
               tweets.</p>
           </div>
         </div>
-        <div class="carousel-item active relative float-left w-full">
+        <div class="carousel-item relative float-left w-full">
 
           <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 100%;">
 
@@ -54,8 +57,8 @@
 
 
           <div class="carousel-caption hidden md:block absolute text-center fw-bold">
-            <h4 class="text-xl">Conocer datos sobre un barrio</h4>
-            <p>Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio
+            <h4 class="text-xl text-black">Conocer datos sobre un barrio</h4>
+            <p class="text-black">Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio
               seleccionado.</p>
           </div>
         </div>
