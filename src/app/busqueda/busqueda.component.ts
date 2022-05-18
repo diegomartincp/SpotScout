@@ -10,6 +10,11 @@ export class BusquedaComponent implements OnInit {
   resultado: string = "";
   m2: string = "";
   medio: string = "";
+
+  nombresResEsc = [];
+  valoracionResEsc = [];
+  etiquetasResEsc = [];
+
   imagen = "../assets/images/experience.png";
   resultadoEsc = "0";
   m2Esc = "0";
@@ -31,6 +36,15 @@ export class BusquedaComponent implements OnInit {
       console.log(data.medio);
       this.m2Esc = data.m2;
       this.medioEsc = data.medio;
+    });
+    this.service.servicio_restaurantes(query).subscribe(data => {
+      console.log(data);
+      console.log(data.nombre);
+      console.log(data.valoracion);
+      console.log(data.etiquetas);
+      this.nombresResEsc = data.nombre;
+      this.valoracionResEsc = data.valoracion;
+      this.etiquetasResEsc = data.etiquetas;
     });
   }
 
