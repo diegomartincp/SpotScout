@@ -2,7 +2,7 @@
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img2.webp');">
   <div class="row d-flex justify-content-center">
     <!-- Le cramos para centrar el resto haciendo de este un flex-->
-    <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center">
+    <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mt-5">
       <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
           aria-describedby="button-addon2" #texto>
         <div class="input-group-append">
@@ -10,9 +10,9 @@
             (click)="funcion_general(texto.value)">Realizar búsqueda</button>
         </div>
     </div>
-    <div class="row row-cols-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card card border-info">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="card card border-info text-center" style="width: 30rem; ">
           <div class="card-body">
             <h5 class="card-title">Listado de Restaurantes</h5>
             <ul class="list-group list-group-flush">
@@ -30,55 +30,58 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row row-cols-2 row-cols-md-6 g-3">
-      <div class="col">
-        <div class="card card border-info">
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="card card border-warning text-center" style="width: 45rem;">
           <div class="card-body">
-            <h5 class="card-title">Listado de Restaurantes</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">1</li>
-              <li class="list-group-item">2</li>
-              <li class="list-group-item">3</li>
-              <li class="list-group-item">4</li>
-              <li class="list-group-item">5</li>
-              <li class="list-group-item">6</li>
-              <li class="list-group-item">7</li>
-              <li class="list-group-item">8</li>
-              <li class="list-group-item">9</li>
-              <li class="list-group-item">10</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card card border-warning">
-          <div class="card-body">
-            <h5 class="card-title">Información inmobiliaria del barrio</h5>
-            <br>
-            <td class="fw-bold">
-              Nº de viviendas en alquiler
-            </td>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content.</p>
-            <br>
-            <td class="fw-bold">
-              Nº de viviendas en venta
-            </td>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content.</p>
-            <br>
-            <td class="fw-bold">
-              Precio €/m2
-            </td>
-            <p class="text-center">{{ m2 }}</p>
-            <p class="text-center fw-bold">{{ m2Esc }}</p>
-            <br>
-            <td class="fw-bold">
-              Precio medio de las viviendas
-            </td>
-            <p class="text-center">{{ medio }}</p>
-            <p class="text-center fw-bold">{{ medioEsc }}</p>
+            <h5 class="card-title text-center">Información inmobiliaria del barrio</h5>
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+              <div class="col">
+                <div class="card  justify-content-center" >
+                  <div class="card-body">
+                    <td class="fw-bold">
+                      Nº de viviendas en alquiler
+                    </td>
+                    <img src="../../assets/images/houseRent.png" width="50" height="50" alt="Rent House">
+                    <p class="card-text text-center fw-bold">0</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <td class="fw-bold">
+                      Nº de viviendas en venta
+                    </td>
+                    <img src="../../assets/images/deal.png" class="justify-content-center" width="50" height="50" alt="Rent House">
+                    <p class="card-text text-center fw-bold">0</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <td class="fw-bold">
+                      Precio €/m2
+                    </td>
+                    <img src="../../assets/images/buy.png" class="justify-content-center" width="50" height="50" alt="Rent House">
+                    <p class="text-center">{{ m2 }}</p>
+                    <p class="text-center fw-bold">{{ m2Esc }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <td class="fw-bold">
+                      Precio medio de las viviendas
+                    </td>
+                    <img src="../../assets/images/house.png" class="justify-content-center" width="50" height="50" alt="Rent House">
+                    <p class="text-center">{{ medio }}</p>
+                    <p class="text-center fw-bold">{{ medioEsc }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
