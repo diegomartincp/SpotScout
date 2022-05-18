@@ -15,6 +15,10 @@ export class IndexComponent implements OnInit {
   m2Esc = "0";
   medioEsc = "0";
 
+  nombresResEsc = [];
+  valoracionResEsc = [];
+  etiquetasResEsc = [];
+
   constructor(
     public service: ApiComunicationService
   ) { }
@@ -27,10 +31,20 @@ export class IndexComponent implements OnInit {
       this.resultadoEsc = data.resultado;
     });
     this.service.servicio_precio(query).subscribe(data => {
+      console.log(data);
       console.log(data.m2);
       console.log(data.medio);
       this.m2Esc = data.m2;
       this.medioEsc = data.medio;
+    });
+    this.service.servicio_restaurantes(query).subscribe(data => {
+      console.log(data);
+      console.log(data.nombre);
+      console.log(data.valoracion);
+      console.log(data.etiquetas);
+      this.nombresResEsc = data.nombre;
+      this.valoracionResEsc = data.valoracion;
+      this.etiquetasResEsc = data.etiquetas;
     });
   }
 

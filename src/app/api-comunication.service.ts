@@ -39,4 +39,11 @@ servicio_precio(query:string) : Observable<API_RETURN>{
   return this.servicio_api.get<API_RETURN>(path)
 }
 
+servicio_restaurantes(query:string) : Observable<API_RETURN>{
+  let ciudad = query.replace(" ","+")
+  let path ='http://127.0.0.1:8000/api/restaurantes'//+ciudad
+  console.log(path)
+  return this.servicio_api.get<API_RETURN>(path)
+}
+
 }
