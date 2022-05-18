@@ -1,48 +1,120 @@
 <section class="vh-max bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img2.webp');">
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center mt-3">
     <!-- Le cramos para centrar el resto haciendo de este un flex-->
     <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mt-5">
       <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
-          aria-describedby="button-addon2" #texto>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            (click)="funcion_general(texto.value)">Realizar búsqueda</button>
-        </div>
+        aria-describedby="button-addon2" #texto>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+          (click)="funcion_general(texto.value)">Realizar búsqueda</button>
+      </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="card card border-info text-center" style="width: 45rem;">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+      <div class="col d-flex justify-content-center mt-1">
+        <div class="card card border-info text-center" style="width: 47rem;">
           <div class="card-body">
             <h5 class="card-title">Listado de Restaurantes</h5>
+            <br>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">1</li>
-              <li class="list-group-item">2</li>
-              <li class="list-group-item">3</li>
-              <li class="list-group-item">4</li>
-              <li class="list-group-item">5</li>
-              <li class="list-group-item">6</li>
-              <li class="list-group-item">7</li>
-              <li class="list-group-item">8</li>
-              <li class="list-group-item">9</li>
-              <li class="list-group-item">10</li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Restaurante 1</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Restaurante 2</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Restaurante 3</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Restaurante 4</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Restaurante 5</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Restaurante 6</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Restaurante 7</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Restaurante 8</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Restaurante 9</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Restaurante 10</h6>
+                    <p>Nombre: </p>
+                    <p>Puntuación: </p>
+                    <p>Precio:</p>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="card card border-warning text-center" style="width: 45rem; height: 29rem;">
-          <div class="card-body">
-            <h5 class="card-title text-center">Información inmobiliaria del barrio</h5>
-            <div class="row row-cols-1 row-cols-md-2 g-4 mt-1">
+      <div class="col d-flex justify-content-center mt-1">
+        <div class="card card border-warning text-center" style="width: 45rem; height: 50rem;">
+          <div>
+            <h5 class="card-title text-center mt-3">Información inmobiliaria del barrio</h5>
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-1 m-1">
               <div class="col">
-                <div class="card justify-content-center" style="width: 15rem; height: 11rem;" >
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
                   <div class="card-body">
                     <td class="fw-bold">
                       Nº de viviendas en alquiler
                     </td>
                     <br>
-                    <img src="../../assets/images/houseRent.png" width="50" height="50" alt="Rent House">
+                    <img src="../../assets/images/houseRent.png" class="justify-content-center align-items-center"
+                      width="50" height="50" alt="Rent House">
                     <br>
                     <br>
                     <p class="card-text text-center fw-bold">0</p>
@@ -50,13 +122,14 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
                   <div class="card-body">
                     <td class="fw-bold">
                       Nº de viviendas en venta
                     </td>
                     <br>
-                    <img src="../../assets/images/deal.png" class="justify-content-center" width="50" height="50" alt="Rent House">
+                    <img src="../../assets/images/deal.png" class="justify-content-center align-items-center" width="50"
+                      height="50" alt="Rent House">
                     <br>
                     <br>
                     <p class="card-text text-center fw-bold">0</p>
@@ -64,13 +137,14 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
                   <div class="card-body">
                     <td class="fw-bold">
                       Precio €/m2
                     </td>
                     <br>
-                    <img src="../../assets/images/buy.png" class="justify-content-center" width="50" height="50" alt="Rent House">
+                    <img src="../../assets/images/buy.png" class="justify-content-center align-items-center" width="50"
+                      height="50" alt="Rent House">
                     <br>
                     <p class="text-center">{{ m2 }}</p>
                     <p class="text-center fw-bold">{{ m2Esc }}</p>
@@ -78,12 +152,13 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 15rem; height: 11rem;">
+                <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem;">
                   <div class="card-body">
                     <td class="fw-bold">
                       Precio medio de las viviendas
                     </td>
-                    <img src="../../assets/images/house.png" class="justify-content-center" width="50" height="50" alt="Rent House">
+                    <img src="../../assets/images/house.png" class="justify-content-center" width="50" height="50"
+                      alt="Rent House">
                     <p class="text-center">{{ medio }}</p>
                     <p class="text-center fw-bold">{{ medioEsc }}</p>
                   </div>
@@ -91,20 +166,34 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-success mt-3">
-          <div class="card-body">
-            <h5 class="card-title">Análisis de sentimiento de las noticias del barrio:</h5>
-            <td class="fw-bold">
-              Valor de delito de odio del barrio
-            </td>
-            <p class="text-center">{{ resultado }}</p>
-            <p class="text-center fw-bold">{{ resultadoEsc }}</p>
+          <br>
+          <br>
+          <div class="mt-5">
+            <h5 class="card-title text-center">Análisis de sentimiento de las noticias del barrio</h5>
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-1 justify-content-center align-items-center">
+              <div class="col">
+                <div class="card justify-content-center" style="width: 15rem; height: 11rem;">
+                  <div class="card-body">
+                    <td class="fw-bold">
+                      Valor de delito de odio del barrio
+                    </td>
+                    <p class="text-center">{{ resultado }}</p>
+                    <p class="text-center fw-bold">{{ resultadoEsc }}</p>
+                    <img src="../../assets/images/feliz.png" class="justify-content-center" width="50" height="50">
+                    <img src="../../assets/images/triste.png" class="justify-content-center" width="50" height="50">
+                    <img src="../../assets/images/experience.png" class="justify-content-center" width="50" height="50">
+                    <img src="../../assets/images/neutral (1).png" class="justify-content-center" width="50" height="50">
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
+
     </div>
   </div>
 
