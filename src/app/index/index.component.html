@@ -9,13 +9,12 @@
           seleccionado por estos.<br>
           Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
           de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
+
         </div>
-        <div class="z-index1 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-1 mb-5 mt-5">
-          <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
-            aria-describedby="button-addon2" #texto>
+        <div class="absolute input-group m-5 my-5 mb-5 justify-content-center align-items-center">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-              (click)="funcion_general(texto.value)">Realizar búsqueda</button>
+            <a class="btn btn-outline-secondary" routerLink="/busqueda"
+            routerLinkActive="active-link" href="/busqueda" role="button">Realizar Busqueda</a>
           </div>
         </div>
       </div>
