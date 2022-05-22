@@ -12,17 +12,17 @@
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1cg">Nombre</label>
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" #nombre/>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example3cg">Correo Electrónico</label>
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" #correo/>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example4cg">Contraseña</label>
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" #contrasena/>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -33,7 +33,7 @@
 
                 <div class="col-md-6">
                   <p>Seleccione su tipo de usuario:</p>
-                  <select class="select">
+                  <select class="select" #tipo_user>
                     <option value="1">Usuario</option>
                     <option value="2">Administrador</option>
                   </select>
@@ -47,8 +47,8 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" routerLink="/login"
-                    routerLinkActive="active-link" href="/login" role="button">Registrar</a>
+                  <!--<a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" routerLink="/login"routerLinkActive="active-link" href="/login" role="button" click="crear_usuario(nombre, correo, contrasena)">Registrar</a>-->
+                  <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" type="button" id="button-addon2" (click)="crear_usuario(nombre.value, correo.value, contrasena.value, tipo_user.value)">Realizar búsqueda</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 m-0">Ya estoy registrado? <a href="#!" class="fw-bold text-body"

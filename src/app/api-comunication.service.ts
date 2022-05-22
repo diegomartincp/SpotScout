@@ -46,4 +46,10 @@ servicio_restaurantes(query:string) : Observable<API_RETURN>{
   return this.servicio_api.get<API_RETURN>(path)
 }
 
+servicio_registro_user(nombre_usuario:string, correo:string, contrasena:string, tipo_user:string) : Observable<API_RETURN>{
+  let path ='http://127.0.0.1:8000/api/registro_usuario/?nombre_user='+nombre_usuario+'&correo='+correo+'&contrasena='+contrasena+'&tipo_user='+tipo_user
+  console.log(path)
+  return this.servicio_api.get<API_RETURN>(nombre_usuario)
+}
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
+
 
 @Component({
   selector: 'app-acceder',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccederComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: ApiComunicationService) { }
 
   ngOnInit(): void {
   }
-
+  crear_usuario(nombre:string, correo:string, contrasena:string, tipo_user:string){
+    this.service.servicio_registro_user(nombre,correo,contrasena,tipo_user)
+  }
 }

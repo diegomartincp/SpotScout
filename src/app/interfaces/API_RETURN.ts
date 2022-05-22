@@ -5,4 +5,7 @@ export interface API_RETURN{
   nombre:[];
   valoracion:[];
   etiquetas:[];
+  nombre_usuario:string;
+  correo:string;
+  contrasena:string;
 }
