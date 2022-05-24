@@ -14,6 +14,11 @@ export class AccederComponent implements OnInit {
   ngOnInit(): void {
   }
   crear_usuario(nombre:string, correo:string, contrasena:string, tipo_user:string){
-    this.service.servicio_registro_user(nombre,correo,contrasena,tipo_user)
+    this.service.servicio_registro_user(nombre,correo,contrasena,tipo_user).subscribe(data => {
+      console.log(data);
+      console.log(data.nombre);
+      console.log(data.valoracion);
+      console.log(data.etiquetas);
+    });
   }
 }
