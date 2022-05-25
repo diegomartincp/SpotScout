@@ -1,9 +1,11 @@
 export interface API_RETURN{
-  resultado:string;
-  m2:string;
-  medio:string;
+  porcentaje_odio:string;
+  precio_m2:string;
+  precio_viviendas:string;
+  num_viviendas_venta:string;
+  num_viviendas_alquiler:string;
   nombre:[];
-  valoracion:[];
+  puntuacion:[];
   etiquetas:[];
   nombre_usuario:string;
   correo:string;

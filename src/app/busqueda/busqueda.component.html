@@ -27,7 +27,7 @@ style="background-image: url('../../assets/images/sky.jpg');">
                     width="50" height="50" alt="Rent House">
                   <br>
                   <br>
-                  <p class="card-text text-center fw-bold">0</p>
+                  <p class="card-text text-center fw-bold">{{ numVivAlq }}</p>
                 </div>
               </div>
             </div>
@@ -40,9 +40,10 @@ style="background-image: url('../../assets/images/sky.jpg');">
                   <br>
                   <img src="../../assets/images/deal.png" class="justify-content-center align-items-center" width="50"
                     height="50" alt="Rent House">
+
                   <br>
                   <br>
-                  <p class="card-text text-center fw-bold">0</p>
+                  <p class="card-text text-center fw-bold">{{ numVivVent }}</p>
                 </div>
               </div>
             </div>
@@ -113,15 +114,15 @@ style="background-image: url('../../assets/images/sky.jpg');">
               <div class="row">
                 <div class="col-md-6">
                   <h5>Restaurante 1</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[0] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[0] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[0] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[0] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[0] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[0] }}</p>
                 </div>
                 <div class="col-md-6">
                   <h5>Restaurante 2</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[1] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[1] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[1] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[1] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[1] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[1] }}</p>
                 </div>
               </div>
             </li>
@@ -129,15 +130,15 @@ style="background-image: url('../../assets/images/sky.jpg');">
               <div class="row">
                 <div class="col-md-6">
                   <h5>Restaurante 3</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[2] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[2] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[2] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[2] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[2] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[2] }}</p>
                 </div>
                 <div class="col-md-6">
                   <h5>Restaurante 4</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[3] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[3] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[3] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[3] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[3] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[3] }}</p>
                 </div>
               </div>
             </li>
@@ -145,15 +146,15 @@ style="background-image: url('../../assets/images/sky.jpg');">
               <div class="row">
                 <div class="col-md-6">
                   <h5>Restaurante 5</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[4] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[4] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[4] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[4] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[4] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[4] }}</p>
                 </div>
                 <div class="col-md-6">
                   <h5>Restaurante 6</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[5] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[5] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[5] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[5] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[5] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[5] }}</p>
                 </div>
               </div>
             </li>
@@ -161,15 +162,15 @@ style="background-image: url('../../assets/images/sky.jpg');">
               <div class="row">
                 <div class="col-md-6">
                   <h5>Restaurante 7</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[6] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[6] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[6] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[6] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[6] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[6] }}</p>
                 </div>
                 <div class="col-md-6">
                   <h5>Restaurante 8</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[7] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[7] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[7] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[7] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[7] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[7] }}</p>
                 </div>
               </div>
             </li>
@@ -177,15 +178,15 @@ style="background-image: url('../../assets/images/sky.jpg');">
               <div class="row">
                 <div class="col-md-6">
                   <h5>Restaurante 9</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[8] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[8] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[8] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[8] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[8] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[8] }}</p>
                 </div>
                 <div class="col-md-6">
                   <h5>Restaurante 10</h5>
-                  <p><b>Nombre:</b> {{ nombresResEsc[9] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionResEsc[9] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasResEsc[9] }}</p>
+                  <p><b>Nombre:</b> {{ nombresRestaurantes[9] }}</p>
+                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[9] }}</p>
+                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[9] }}</p>
                 </div>
               </div>
             </li>

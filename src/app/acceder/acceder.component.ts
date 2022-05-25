@@ -17,7 +17,7 @@ export class AccederComponent implements OnInit {
     this.service.servicio_registro_user(nombre,correo,contrasena,tipo_user).subscribe(data => {
       console.log(data);
       console.log(data.nombre);
-      console.log(data.valoracion);
+      console.log(data.puntuacion);
       console.log(data.etiquetas);
     });
   }

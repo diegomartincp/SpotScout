@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NEVER } from 'rxjs';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
 
 @Component({
@@ -10,11 +11,15 @@ export class BusquedaComponent implements OnInit {
   resultado: string = "";
   m2: string = "";
   medio: string = "";
+  numVivVent: string = "";
+  numVivAlq: string = "";
 
   nombresResEsc = [];
   valoracionResEsc = [];
   etiquetasResEsc = [];
-
+  nombresRestaurantes : string[] = [];
+  valoracionesRestaurantes : string[] = [];
+  etiquetasRestaurantes : string[] = [];
   imagen = "../assets/images/experience.png";
   resultadoEsc = "0";
   m2Esc = "0";
@@ -26,51 +31,58 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  /*funcion_general(query:string){
-    this.service.servicio_delito_odio(query).subscribe(data => {
-      console.log(data.resultado);
-      this.resultadoEsc = data.resultado;
-    });
-    this.service.servicio_precio(query).subscribe(data => {
-      console.log(data.m2);
-      console.log(data.medio);
-      this.m2Esc = data.m2;
-      this.medioEsc = data.medio;
-    });
-    this.service.servicio_restaurantes(query).subscribe(data => {
-      console.log(data);
-      console.log(data.nombre);
-      console.log(data.valoracion);
-      console.log(data.etiquetas);
-      this.nombresResEsc = data.nombre;
-      this.valoracionResEsc = data.valoracion;
-      this.etiquetasResEsc = data.etiquetas;
-    });
-  }
 
-  get_resultado_delito_odio(query:string){
-    console.log("hola 1")
-    this.service.servicio_delito_odio(query).subscribe(data => {
-      console.log(data.resultado);
-      this.resultadoEsc = data.resultado;
-    });
-    console.log("hola 2")
-  }*/
 
   funcion_general(query:string){
     this.service.servicio_busqueda(query).subscribe(data => {
-      console.log(data.resultado);
-      this.resultadoEsc = data.resultado;
-      console.log(data.m2);
-      console.log(data.medio);
-      this.m2Esc = data.m2;
-      this.medioEsc = data.medio;
+      console.log(data.porcentaje_odio);
+      this.resultadoEsc = data.porcentaje_odio;
+      console.log(data.precio_m2);
+      console.log(data.precio_viviendas);
+      this.m2Esc = data.precio_m2;
+      this.medioEsc = data.precio_viviendas;
+
+      console.log(data.num_viviendas_venta);
+      console.log(data.num_viviendas_alquiler);
+      this.numVivVent = data.num_viviendas_venta;
+      this.numVivAlq = data.num_viviendas_alquiler;
+
+
       console.log(data.nombre);
-      console.log(data.valoracion);
+      console.log(data.puntuacion);
       console.log(data.etiquetas);
       this.nombresResEsc = data.nombre;
-      this.valoracionResEsc = data.valoracion;
+      this.valoracionResEsc = data.puntuacion;
       this.etiquetasResEsc = data.etiquetas;
+
+      String(this.nombresResEsc).replace('"', '')
+      String(this.nombresResEsc).replace('[', '')
+
+      var str = String(this.nombresResEsc);
+      var nombresRestaurantes = [];
+      nombresRestaurantes = str.split(",");
+      console.log(nombresRestaurantes)
+      this.nombresRestaurantes = nombresRestaurantes;
+
+      String(this.valoracionResEsc).replace('"', '')
+      String(this.valoracionResEsc).replace('[', '')
+
+      var str = String(this.valoracionResEsc);
+      var valoracionesRestaurantes = [];
+      valoracionesRestaurantes = str.split(",");
+      console.log(valoracionesRestaurantes)
+      this.valoracionesRestaurantes = valoracionesRestaurantes;
+
+      String(this.etiquetasResEsc).replace('"', '')
+      String(this.etiquetasResEsc).replace('[', '')
+
+      var str = String(this.etiquetasResEsc);
+      var etiquetasRestaurantes = [];
+      etiquetasRestaurantes = str.split(",");
+      console.log(etiquetasRestaurantes)
+      this.etiquetasRestaurantes = etiquetasRestaurantes;
+
+
     });
   }
 }
