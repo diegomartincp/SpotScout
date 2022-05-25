@@ -12,7 +12,8 @@ import { SentimientoComponent } from './sentimiento/sentimiento.component';
 import{ HttpClientModule } from '@angular/common/http';
 import { AccederComponent } from './acceder/acceder.component';
 import { LoginComponent } from './login/login.component';
-import { BusquedaComponent } from './busqueda/busqueda.component'; //Se importa la librería para la llamada a la api
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AdministracionComponent } from './administracion/administracion.component'; //Se importa la librería para la llamada a la api
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BusquedaComponent } from './busqueda/busqueda.component'; //Se importa 
     SentimientoComponent,
     AccederComponent,
     LoginComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    AdministracionComponent
   ],
   imports: [
     BrowserModule,

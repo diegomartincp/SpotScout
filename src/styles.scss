@@ -78,10 +78,29 @@ background-color: $gris_claro;
   border-width: 1px;
   border-color: white;
 }
+.active-link-admin{
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 //Padding al body del index para que se vea toda la página
-body {
-  padding-bottom: 20px;
+html{
+  //padding-bottom: 20px;
+  height: 100%;
+}
+.bg-image{
+  background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img7.webp');
+  background-attachment: fixed;
+}
+.tamano_total{
+  height: 90vh;
+}
+.navbar-padding-top{
+  padding-top: 63px;
+}
+//Admin
+.tabla_bbdd{
+margin:10px;
 }
 
 

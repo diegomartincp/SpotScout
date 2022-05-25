@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.authorisation.token);
       const token_ = localStorage.getItem('token');
       console.log(token_);
-    })
-
+    });
   }
 }

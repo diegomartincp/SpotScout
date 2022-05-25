@@ -3,7 +3,9 @@ import { HttpClient } from "@angular/common/http";  //Importamos HttpClient para
 
 import { API_RETURN } from './interfaces/API_RETURN'; //Importamos el objeto API_RETURN que no es mas que un objeto que define la estructura de lo devuielto por la API
 import { login_return} from './interfaces/login_return';
- import { Observable } from 'rxjs';  //Para emplear el objeto observable
+import { busqueda } from './interfaces/bbdd';
+
+import { Observable } from 'rxjs';  //Para emplear el objeto observable
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -68,4 +70,10 @@ servicio_busqueda(query:string) : Observable<API_RETURN>{
   return this.servicio_api.get<API_RETURN>(path)
 }
 
+//Servicios del administrador
+servicio_select_busquedas() : Observable<busqueda>{
+  let path ='http://127.0.0.1:8000/api/select_busquedas'
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path)
+}
 }
