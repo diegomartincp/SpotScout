@@ -26,7 +26,7 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  funcion_general(query:string){
+  /*funcion_general(query:string){
     this.service.servicio_delito_odio(query).subscribe(data => {
       console.log(data.resultado);
       this.resultadoEsc = data.resultado;
@@ -55,5 +55,22 @@ export class BusquedaComponent implements OnInit {
       this.resultadoEsc = data.resultado;
     });
     console.log("hola 2")
+  }*/
+
+  funcion_general(query:string){
+    this.service.servicio_busqueda(query).subscribe(data => {
+      console.log(data.resultado);
+      this.resultadoEsc = data.resultado;
+      console.log(data.m2);
+      console.log(data.medio);
+      this.m2Esc = data.m2;
+      this.medioEsc = data.medio;
+      console.log(data.nombre);
+      console.log(data.valoracion);
+      console.log(data.etiquetas);
+      this.nombresResEsc = data.nombre;
+      this.valoracionResEsc = data.valoracion;
+      this.etiquetasResEsc = data.etiquetas;
+    });
   }
 }
