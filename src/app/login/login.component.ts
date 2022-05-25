@@ -14,6 +14,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   funcion_login_usuario(correo:string, contrasena:string){
-    this.service.servicio_login_user(correo, contrasena)
+    const data = this.service.servicio_login_user(correo, contrasena).subscribe((data) => {
+      localStorage.setItem('token', data.authorisation.token);
+      const token_ = localStorage.getItem('token');
+      console.log(token_);
+    })
+
   }
 }
