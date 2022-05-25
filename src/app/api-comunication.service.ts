@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";  //Importamos HttpClient para la llamada a la api
 
 import { API_RETURN } from './interfaces/API_RETURN'; //Importamos el objeto API_RETURN que no es mas que un objeto que define la estructura de lo devuielto por la API
-import { Observable } from 'rxjs';  //Para emplear el objeto observable
+import { login_return} from './interfaces/login_return';
+ import { Observable } from 'rxjs';  //Para emplear el objeto observable
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -52,10 +53,12 @@ servicio_registro_user(nombre_usuario:string, correo:string, contrasena:string, 
   return this.servicio_api.get<API_RETURN>(path)
 }
 
-servicio_login_user(correo:string, contrasena:string) : Observable<API_RETURN>{
-  let path ='http://127.0.0.1:8000/api/registro_usuario/?correo='+correo+'&contrasena='+contrasena
-  console.log(path)
-  return this.servicio_api.get<API_RETURN>(path)
+//EL LOGIN UTILIZA POST
+servicio_login_user(correo:string, contrasena:string) : Observable<login_return>{
+  const url = 'http://127.0.0.1:8000/api/login'; //La url de la api
+  const body = { email: correo, password: contrasena }; //El cuerpo del JSON que se envía a la API
+  console.log(body)
+  return this.servicio_api.post<login_return>(url,body)
 }
 
 servicio_busqueda(query:string) : Observable<API_RETURN>{
