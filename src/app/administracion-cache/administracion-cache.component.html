@@ -15,6 +15,7 @@
                       <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_cache" routerLinkActive="active-link-admin">
                         <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Elementos guardados en caché</span>
                     </a>
+
                     <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_query" routerLinkActive="active-link-admin">
                       <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Filtrar búsquedas</span>
                   </a>
@@ -31,19 +32,32 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">ID Busqueda en caché</th>
-                  <th scope="col">ID Busqueda realizada</th>
+                  <th scope="col">ID Busqueda</th>
                   <th scope="col">Query</th>
-                  <th scope="col">Created_at</th>
+                  <th scope="col">Precio M2</th>
+                  <th scope="col">Precio medio</th>
+                  <th scope="col">Viviendas venta</th>
+                  <th scope="col">Viviendas alquiler</th>
+                  <th scope="col">% odio</th>
+                  <th scope="col">Array nombre restaurantes</th>
+                  <th scope="col">Array puntuación restaurantes</th>
+                  <th scope="col">Array etiquetas restaurantes</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr *ngFor="let busqueda of array">
-                  <th scope="row">{{busqueda['busqueda_id']}}</th>
-                  <td>{{busqueda['id']}}</td>
+                  <th scope="row">{{busqueda['id']}}</th>
                   <td>{{busqueda['query']}}</td>
-                  <td>{{busqueda['created_at']}}</td>
+                  <td>{{busqueda['precio_m2']}}</td>
+                  <td>{{busqueda['precio_viviendas']}}</td>
+                  <td>{{busqueda['num_viviendas_venta']}}</td>
+                  <td>{{busqueda['num_viviendas_alquiler']}}</td>
+                  <td>{{busqueda['porcentaje_odio']}}</td>
+                  <td style="font-size: 60%;">{{busqueda['nombre']}}</td>
+                  <td style="font-size: 60%;">{{busqueda['puntuacion']}}</td>
+                  <td style="font-size: 60%;">{{busqueda['etiquetas']}}</td>
+
                 </tr>
               </tbody>
             </table>

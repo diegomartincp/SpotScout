@@ -65,6 +65,7 @@ servicio_login_user(correo:string, contrasena:string) : Observable<login_return>
 
 servicio_busqueda(query:string) : Observable<API_RETURN>{
   let ciudad = query.replace(" ","+")
+  console.log(ciudad)
   let path ='http://127.0.0.1:8000/api/bbdd/?ciudad='+ciudad;
   console.log(path)
   return this.servicio_api.get<API_RETURN>(path)
@@ -73,6 +74,18 @@ servicio_busqueda(query:string) : Observable<API_RETURN>{
 //Servicios del administrador
 servicio_select_busquedas() : Observable<busqueda>{
   let path ='http://127.0.0.1:8000/api/select_busquedas'
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path)
+}
+
+servicio_select_cache() : Observable<busqueda>{
+  let path ='http://127.0.0.1:8000/api/select_cache'
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path)
+}
+
+servicio_select_query(query:string) : Observable<busqueda>{
+  let path ='http://127.0.0.1:8000/api/select_query/?query='+query
   console.log(path)
   return this.servicio_api.get<busqueda>(path)
 }
