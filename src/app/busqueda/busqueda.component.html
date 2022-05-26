@@ -1,206 +1,263 @@
-<section class="vh-max bg-image"
-style="background-image: url('../../assets/images/sky.jpg');">
-<div class="row d-flex justify-content-center mt-3">
-    <!-- Le cramos para centrar el resto haciendo de este un flex-->
-    <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mt-5">
-      <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
-        aria-describedby="button-addon2" #texto>
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-          (click)="funcion_general(texto.value)">Realizar búsqueda</button>
-      </div>
-    </div>
+<html>
+  <body>
+    <div class="card">
+      <div class="card-body">
 
-    <div class="row row-cols-1 row-cols-md-2 g-4 mb-5 justify-content-center ">
-      <div class="card card border-rgba(245, 245, 245, .1); text-center justify-content-center" style="width: 42rem; height: 55rem; background-color: rgba(245, 245, 245, 0.7);">
-        <div class="justify-content-center align-items-center opacity-100">
-          <h5 class="card-title text-center mt-5"><ins>Información inmobiliaria del barrio</ins></h5>
-          <div class="row row-cols-1 row-cols-md-2 g-4 mt-1 m-5 ">
-            <div class="col ">
-              <div class="card justify-content-center align-items-center " style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
-                <div class="card-body">
-                  <td class="fw-bold">
-                    Nº de viviendas en alquiler
-                  </td>
-                  <br>
-                  <img src="../../assets/images/houseRent.png" class="justify-content-center align-items-center"
-                    width="50" height="50" alt="Rent House">
-                  <br>
-                  <br>
-                  <p class="card-text text-center fw-bold">{{ numVivAlq }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
-                <div class="card-body">
-                  <td class="fw-bold">
-                    Nº de viviendas en venta
-                  </td>
-                  <br>
-                  <img src="../../assets/images/deal.png" class="justify-content-center align-items-center" width="50"
-                    height="50" alt="Rent House">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
 
-                  <br>
-                  <br>
-                  <p class="card-text text-center fw-bold">{{ numVivVent }}</p>
+          <!-- Sidebar -->
+          <!-- End of Sidebar -->
+
+          <!-- Content Wrapper -->
+          <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+              <!-- Topbar -->
+              <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                  <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Topbar Search -->
+                <form class="input-group p-3 w-50  align-items-center">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
+                      aria-describedby="button-addon2" #query>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        (click)="funcion_general(query.value)">Realizar búsqueda</button>
+                    </div>
+                  </div>
+                </form>
+              </nav>
+              <!-- End of Topbar -->
+
+              <!-- Begin Page Content -->
+              <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                  <h1 class="h3 mb-0 text-gray-800">Cuadro de Busqueda</h1>
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+                  <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                              Nº Viviendas en Alquiler</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ numVivAlq }}</div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                              Nº Viviendas en Venta</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{numVivVent}}</div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Precio medio Viviendas
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                  <p class="text-center">{{ medio }}</p>
+                                  <p class="text-center fw-bold">{{ medioEsc }}</p>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Pending Requests Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                              Media €/Metro Cuadrado</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                              <p class="text-center">{{ m2 }}</p>
+                              <p class="text-center fw-bold">{{ m2Esc }}</p>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                  <!-- Area Chart -->
+                  <div class="col-xl-7 col-lg-7">
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Sentimiento de Odio de los Últimos 100 Tweets</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-area pt-4 pb-5">
+                          <canvas id="myAreaChart"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Pie Chart -->
+                  <div class="col-xl-5 col-lg-5">
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Sentimiento de Odio de las Noticias</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <canvas id="myPieChart"></canvas>
+                        </div>
+                        <div class="mt-4 text-center small">
+                          <span class="mr-2">
+                            <p class="text-center">{{ resultado }}</p>
+                      <p class="text-center fw-bold">{{ resultadoEsc }}</p>
+                            <i class="fas fa-circle text-primary"></i> Odio
+                          </span>
+                          <span class="mr-2">
+                            <i class="fas fa-circle text-success"></i>No odio
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+                  <!-- Content Column -->
+                  <div class="col-lg-6 mb-4">
+
+                    <!-- Color System -->
+                    <div class="row">
+                      <div class="col-lg-6" *ngFor="let nombre of nombresRestaurantes; let i=index;">
+                        <div class="card bg-primary text-white shadow">
+                          <div class="card-body">
+                            {{nombre}}
+                            <div class="text-white-50 small">{{valoracionesRestaurantes[i]}}</div>
+                            <div class="text-white-50 small">{{etiquetasRestaurantes[i]}}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+              <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                  <span>Copyright &copy; Your Website 2021</span>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
-                <div class="card-body">
-                  <td class="fw-bold">
-                    Precio €/m2
-                  </td>
-                  <br>
-                  <img src="../../assets/images/buy.png" class="justify-content-center align-items-center" width="50"
-                    height="50" alt="Rent House">
-                  <br>
-                  <p class="text-center">{{ m2 }}</p>
-                  <p class="text-center fw-bold">{{ m2Esc }}</p>
-                </div>
+            </footer>
+            <!-- End of Footer -->
+
+          </div>
+          <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
               </div>
-            </div>
-            <div class="col">
-              <div class="card justify-content-center align-items-center" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
-                <div class="card-body">
-                  <td class="fw-bold">
-                    Precio medio de las viviendas
-                  </td>
-                  <img src="../../assets/images/house.png" class="justify-content-center" width="50" height="50"
-                    alt="Rent House">
-                  <p class="text-center">{{ medio }}</p>
-                  <p class="text-center fw-bold">{{ medioEsc }}</p>
-                </div>
+              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
               </div>
             </div>
           </div>
         </div>
-        <br>
-        <br>
-        <div class="mt-5">
-          <h5 class="card-title text-center"><ins>Análisis de sentimiento de las noticias del barrio</ins></h5>
-          <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center align-items-center">
-            <div class="col">
-              <div class="card justify-content-center m-5" style="width: 15rem; height: 11rem; background-color: rgba(245, 245, 245, .1);">
-                <div class="card-body">
-                  <td class="fw-bold rounded">
-                    <ins>Valor de delito de odio del barrio</ins>
-                  </td>
-                  <p class="text-center">{{ resultado }}</p>
-                  <p class="text-center fw-bold">{{ resultadoEsc }}</p>
-                  <img src="../../assets/images/feliz.png" class="justify-content-center" width="50" height="50">
-                  <img src="../../assets/images/triste.png" class="justify-content-center" width="50" height="50">
-                  <img src="../../assets/images/experience.png" class="justify-content-center" width="50" height="50">
-                  <img src="../../assets/images/neutral (1).png" class="justify-content-center" width="50" height="50">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
     </div>
-  </div>
-  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5 justify-content-center">
-    <div class="col d-flex justify-content-center mt-1">
-      <div class="card card border-rgba(245, 245, 245, .1); text-center mb-5" style="width: 47rem; background-color: rgba(245, 245, 245, .7);">
-        <div class="card-body" style="background-color: rgba(245, 245, 245, .1);">
-          <h5 class="card-title">Listado de Restaurantes</h5>
-          <br>
-          <ul class="list-group list-group-flush" style="background-color:rgba(245, 245, 245, .2) ;">
-            <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
-              <div class="row">
-                <div class="col-md-6">
-                  <h5>Restaurante 1</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[0] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[0] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[0] }}</p>
-                </div>
-                <div class="col-md-6">
-                  <h5>Restaurante 2</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[1] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[1] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[1] }}</p>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
-              <div class="row">
-                <div class="col-md-6">
-                  <h5>Restaurante 3</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[2] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[2] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[2] }}</p>
-                </div>
-                <div class="col-md-6">
-                  <h5>Restaurante 4</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[3] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[3] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[3] }}</p>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
-              <div class="row">
-                <div class="col-md-6">
-                  <h5>Restaurante 5</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[4] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[4] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[4] }}</p>
-                </div>
-                <div class="col-md-6">
-                  <h5>Restaurante 6</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[5] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[5] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[5] }}</p>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
-              <div class="row">
-                <div class="col-md-6">
-                  <h5>Restaurante 7</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[6] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[6] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[6] }}</p>
-                </div>
-                <div class="col-md-6">
-                  <h5>Restaurante 8</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[7] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[7] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[7] }}</p>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item" style="background-color:rgba(245, 245, 245, .1) ;">
-              <div class="row">
-                <div class="col-md-6">
-                  <h5>Restaurante 9</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[8] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[8] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[8] }}</p>
-                </div>
-                <div class="col-md-6">
-                  <h5>Restaurante 10</h5>
-                  <p><b>Nombre:</b> {{ nombresRestaurantes[9] }}</p>
-                  <p><b>Puntuación:</b> {{ valoracionesRestaurantes[9] }}</p>
-                  <p><b>Etiquetas:</b> {{ etiquetasRestaurantes[9] }}</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
 
-  </div>
+  <script src="../busqueda/chart-area-demo.js"></script>
+  <script src="../busqueda/chart-bar-demo.js"></script>
+  <script src="../busqueda/chart-pie-demo.js"></script>
+</body>
 
-
-
-
-
-
-</section>
+</html>
