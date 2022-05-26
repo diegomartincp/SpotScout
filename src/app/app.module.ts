@@ -13,7 +13,9 @@ import{ HttpClientModule } from '@angular/common/http';
 import { AccederComponent } from './acceder/acceder.component';
 import { LoginComponent } from './login/login.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
-import { AdministracionComponent } from './administracion/administracion.component'; //Se importa la librería para la llamada a la api
+import { AdministracionComponent } from './administracion/administracion.component';
+import { AdministracionCacheComponent } from './administracion-cache/administracion-cache.component';
+import { AdministracionQueryComponent } from './administracion-query/administracion-query.component'; //Se importa la librería para la llamada a la api
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AdministracionComponent } from './administracion/administracion.compone
     AccederComponent,
     LoginComponent,
     BusquedaComponent,
-    AdministracionComponent
+    AdministracionComponent,
+    AdministracionCacheComponent,
+    AdministracionQueryComponent
   ],
   imports: [
     BrowserModule,
