@@ -23,6 +23,7 @@
                   <i class="fa fa-bars"></i>
                 </button>
 
+
                 <!-- Topbar Search -->
                 <form class="input-group p-3 w-50  align-items-center">
                   <div class="input-group">
@@ -30,10 +31,21 @@
                       aria-describedby="button-addon2" #query>
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                        (click)="funcion_general(query.value)">Realizar búsqueda</button>
+                        (click)="funcion_general(query.value)" onclick="
+                        function eliminarLoading(){
+                          loading = document.getElementById('eliminar');
+                          padre = loading.parentNode;
+                          padre.removeChild(loading);
+                        }
+                        while(m2Esc=0){
+                          setTimeout(eliminarLoading,0);
+                        }
+
+                      ">Realizar búsqueda</button>
                     </div>
                   </div>
-                </form>
+                </form>  
+                <div class='clearfix' id='eliminar'><div class='spinner-border float-right text-primary' role='status'><span class='sr-only'></span></div></div>
               </nav>
               <!-- End of Topbar -->
 
@@ -258,5 +270,4 @@
   <script src="../busqueda/chart-bar-demo.js"></script>
   <script src="../busqueda/chart-pie-demo.js"></script>
 </body>
-
 </html>
