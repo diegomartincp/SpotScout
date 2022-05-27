@@ -10,4 +10,5 @@ export interface API_RETURN{
   nombre_usuario:string;
   correo:string;
   contrasena:string;
+  ultimos_100:[];
 }
