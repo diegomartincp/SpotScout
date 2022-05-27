@@ -29,6 +29,7 @@ export class BusquedaComponent implements OnInit {
   m2Esc = "0";
   medioEsc = "0";
 
+  tweets_test=[0.0258,0,0.8402,0.8402,0.8402,-0.2732,0.4767,0,0,0,0,0,0,0.4767,0.4767,-0.8225,0,0,0,0.4767,0.4767,0.4767,0.4767,0,0.4497,0,0,0,0.807,0,0,0.4019,0.5267,0.5267,0.3818,0.7096,-0.4215,0,0.3182,-0.1655,0.4019,0,0.4019,0,0,0.6249,0.7787,-0.3182,0.3182,0,0,0,0,0,0,0.6833,0.5719,0,0.3182,0,0.5423,0.8172,0,0.3182,0.5423,0.5423,0,0,-0.1779,0.3818,0.4019,-0.2263,0.5423,-0.2263,-0.2263,0,0.4019,0,-0.0516,-0.0516,-0.0516,0.7096,0,0,0,0,0,0,0,0.3818,0,0.3612,0,0.7096,0,0,-0.5994,0.5501,0,-0.0258];
   query:any=""
   constructor(
     public service: ApiComunicationService,
@@ -36,7 +37,7 @@ export class BusquedaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.chart2();
+    this.chart2();
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
       console.log(this.query);
@@ -165,7 +166,7 @@ chart2(){
         pointHoverBorderColor: "rgba(78, 115, 223, 1)",
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: this.tweets,
+        data: this.tweets_test, //Los datos los coge de los tweets
       }],
     },
     options: {

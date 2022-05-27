@@ -73,20 +73,31 @@ servicio_busqueda(query:string) : Observable<API_RETURN>{
 
 //Servicios del administrador
 servicio_select_busquedas() : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
+
   let path ='http://127.0.0.1:8000/api/select_busquedas'
   console.log(path)
-  return this.servicio_api.get<busqueda>(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
 }
 
 servicio_select_cache() : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
+
   let path ='http://127.0.0.1:8000/api/select_cache'
   console.log(path)
-  return this.servicio_api.get<busqueda>(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
 }
 
 servicio_select_query(query:string) : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
   let path ='http://127.0.0.1:8000/api/select_query/?query='+query
   console.log(path)
-  return this.servicio_api.get<busqueda>(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
 }
 }
