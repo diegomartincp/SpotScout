@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NEVER } from 'rxjs';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-busqueda',
@@ -25,11 +26,18 @@ export class BusquedaComponent implements OnInit {
   m2Esc = "0";
   medioEsc = "0";
 
+  query:any=""
   constructor(
-    public service: ApiComunicationService
+    public service: ApiComunicationService,
+    private _Activatedroute:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this._Activatedroute.paramMap.subscribe(params => {
+      this.query = params.get('query');
+      console.log(this.query);
+      if(this.query){this.funcion_general(this.query)}
+  });
   }
 
 
@@ -85,4 +93,7 @@ export class BusquedaComponent implements OnInit {
 
     });
   }
+//CHARTS
+
+
 }

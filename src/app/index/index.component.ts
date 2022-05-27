@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -20,11 +21,17 @@ export class IndexComponent implements OnInit {
   etiquetasResEsc = [];
 
   constructor(
-    public service: ApiComunicationService
+    public service: ApiComunicationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
+  routing_busqueda(query:string){
+    //console.log(query);
+    this.router.navigate(['/busqueda',query]);
+  }
+
   funcion_general(query:string){
     this.service.servicio_delito_odio(query).subscribe(data => {
       console.log(data.porcentaje_odio);

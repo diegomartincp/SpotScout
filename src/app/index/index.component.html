@@ -1,4 +1,10 @@
 <body>
+  <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mt-5">
+    <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar" aria-describedby="button-addon2" #texto_query>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="routing_busqueda(texto_query.value)" >Realizar búsqueda</button>
+    </div>
+  </div>
   <div class="justify-content-center mb-1">
     <div id="carouselExampleCaptions" class="carousel slide relative justify-content-center" data-bs-ride="carousel">
       <div class="jumbotron m-5 position-absolute z-index2 fw-bold">

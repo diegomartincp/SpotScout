@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'acceso', component: AccederComponent },
   { path: 'login', component: LoginComponent },
   { path: 'busqueda', component: BusquedaComponent },
+  { path: 'busqueda/:query', component: BusquedaComponent },
   { path: 'admin', component: AdministracionComponent },
   { path: 'admin_cache', component: AdministracionCacheComponent },
   { path: 'admin_query', component: AdministracionQueryComponent },
