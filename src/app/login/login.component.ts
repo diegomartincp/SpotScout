@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +9,8 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
 export class LoginComponent implements OnInit {
 
   constructor(
-    public service: ApiComunicationService
+    public service: ApiComunicationService,
+    private router: Router
   ) { }
   ngOnInit(): void {
   }
@@ -18,6 +19,13 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.authorisation.token);
       const token_ = localStorage.getItem('token');
       console.log(token_);
+      if(token_){
+        this.router.navigate(['/admin']);
+      }
+      else{
+        //GESTIONAR ERROR EN INICIO SESION
+        console.log("ERROR LOGIN");
+      }
     });
   }
 }
