@@ -50,7 +50,7 @@
               <!-- End of Topbar -->
 
               <!-- Begin Page Content -->
-              <div class="container-fluid">
+              <div class="container-fluid mt-5">
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -146,7 +146,7 @@
 
                 <!-- Content Row -->
 
-                <div class="row">
+                <div class="row mt-5">
 
                   <!-- Area Chart -->
                   <div class="col-xl-7 col-lg-7">
@@ -190,30 +190,32 @@
                   </div>
                 </div>
 
-                <!-- Content Row -->
-                <div class="row">
+                <div class="row d-flex mt-5 justify-content-center align-items-center">
 
-                  <!-- Content Column -->
-                  <div class="col-lg-6 mb-4">
-
-                    <!-- Color System -->
-                    <div class="row">
-                      <div class="col-lg-6" *ngFor="let nombre of nombresRestaurantes; let i=index;">
-                        <div class="card bg-primary text-white shadow">
-                          <div class="card-body">
-                            {{nombre}}
-                            <div class="text-white-50 small">{{valoracionesRestaurantes[i]}}</div>
-                            <div class="text-white-50 small">{{etiquetasRestaurantes[i]}}</div>
+                  <!-- Pie Chart -->
+                  <div class="col-xl-12 col-lg-7">
+                    <div class="card shadow mb-4 d-flex justify-content-between">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row  justify-content-between align-items-center ">
+                        <h6 class="m-0 font-weight-bold text-primary mb-2">Listado de Restaurantes de la Zona</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="row">
+                        <div class="col-lg-6 mb-1 mt-1 m-0.5" *ngFor="let nombre of nombresRestaurantes; let i=index;">
+                          <div class="card bg-primary text-white shadow">
+                            <div class="card-body">
+                              {{nombre}}
+                              <div class="text-white-50 small">{{valoracionesRestaurantes[i]}}</div>
+                              <div class="text-white-50 small">{{etiquetasRestaurantes[i]}}</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
-
                 </div>
-
               </div>
+
               <!-- /.container-fluid -->
 
             </div>
