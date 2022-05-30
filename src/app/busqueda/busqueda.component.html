@@ -163,6 +163,7 @@
                       <!-- Card Body -->
                       <div class="card-body">
                         <div class="chart-area pt-4 pb-5">
+                          <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
                           <canvas id="myAreaChart"></canvas>
                         </div>
                       </div>
@@ -178,6 +179,7 @@
                       <!-- Card Body -->
                       <div class="card-body">
                         <div class="chart-pie pt-4 pb-2">
+                          <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
                           <canvas id="myPieChart"></canvas>
                         </div>
                         <div class="mt-4 text-center small">
@@ -201,6 +203,7 @@
                       </div>
                       <!-- Card Body -->
                       <div class="row">
+                        <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
                         <div class="col-lg-6 mb-1 mt-1 m-0.5 mb-2" *ngFor="let nombre of nombresRestaurantes; let i=index;">
                           <div class="card bg-primary text-white shadow">
                             <div class="card-body">

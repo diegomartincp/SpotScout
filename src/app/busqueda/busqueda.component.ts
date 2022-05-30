@@ -14,9 +14,7 @@ import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 export class BusquedaComponent implements OnInit {
   numVivVent: string = "";
   numVivAlq: string = "";
-
   tweets:string = "";
-
   nombresRestaurantes : string[] = [];
   valoracionesRestaurantes : string[] = [];
   etiquetasRestaurantes : string[] = [];
@@ -27,14 +25,14 @@ export class BusquedaComponent implements OnInit {
   medioEsc = "";
 
   query:any=""
-
+  myLineChart: any;
+  myPieChart:any;
   cargando: boolean = false;
-
-  myLineChart:any;
 
   constructor(
     public service: ApiComunicationService,
-    private _Activatedroute:ActivatedRoute
+    private _Activatedroute:ActivatedRoute,
+
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +47,8 @@ export class BusquedaComponent implements OnInit {
 
 
   funcion_general(query:string){
+    if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
+    if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
     this.cargando = true;
     this.m2Esc = "";
     this.medioEsc = "";
@@ -110,8 +110,8 @@ export class BusquedaComponent implements OnInit {
       console.log("holaaa")
 
       //Generamos la gráfica de tweets
+
       this.chart_tweets(tweets_number_array);
-      console.log(this.myLineChart);
 
 
       //todo cargado cambiamos ruleta carga por datos
@@ -124,7 +124,7 @@ export class BusquedaComponent implements OnInit {
 chart_tweets(tweets: Number[]){
   var labels_=Array.from(Array(100).keys());
 
-  var myLineChart = new Chart("myAreaChart", {
+  this.myLineChart = new Chart("myAreaChart", {
     type: 'line',
     data: {
       labels: labels_,
@@ -177,10 +177,11 @@ chart_tweets(tweets: Number[]){
 
     }
   })
+  //if(myLineChart) myLineChart.destroy(); //destroy del chart
 }
 
 chart_odio(odio: number, no_odio: number){
-  var myPieChart = new Chart("myPieChart", {
+  this.myPieChart = new Chart("myPieChart", {
     type: 'doughnut',
     data: {
       labels: ["Odio"],
