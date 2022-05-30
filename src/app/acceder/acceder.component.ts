@@ -14,11 +14,15 @@ export class AccederComponent implements OnInit {
   ngOnInit(): void {
   }
   crear_usuario(nombre:string, correo:string, contrasena:string, tipo_user:string){
-    this.service.servicio_registro_user(nombre,correo,contrasena,tipo_user).subscribe(data => {
-      console.log(data);
-      console.log(data.nombre);
-      console.log(data.puntuacion);
-      console.log(data.etiquetas);
+    this.service.servicio_registro_user(nombre,correo,contrasena).subscribe(data => {
+
+      const token_ = localStorage.getItem('token');
+      console.log(token_);
+
+      if(token_ ){ //Si token valido y esta validado
+        //MOSTRAR INFO
+      }
+
     });
   }
 }

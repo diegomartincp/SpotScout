@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.authorisation.token);
       const token_ = localStorage.getItem('token');
       console.log(token_);
-      if(token_){
+
+      if(token_ && data.user.validado){ //Si token valido y esta validado
         this.router.navigate(['/admin']);
       }
       else{

@@ -48,17 +48,23 @@ servicio_restaurantes(query:string) : Observable<API_RETURN>{
   console.log(path)
   return this.servicio_api.get<API_RETURN>(path)
 }
-
+/*
 servicio_registro_user(nombre_usuario:string, correo:string, contrasena:string, tipo_user:string) : Observable<API_RETURN>{
   let path ='http://127.0.0.1:8000/api/registro_usuario/?nombre_user='+nombre_usuario+'&correo='+correo+'&contrasena='+contrasena+'&tipo_user='+tipo_user
   console.log(path)
   return this.servicio_api.get<API_RETURN>(path)
 }
-
+*/
 //EL LOGIN UTILIZA POST
 servicio_login_user(correo:string, contrasena:string) : Observable<login_return>{
   const url = 'http://127.0.0.1:8000/api/login'; //La url de la api
   const body = { email: correo, password: contrasena }; //El cuerpo del JSON que se envía a la API
+  console.log(body)
+  return this.servicio_api.post<login_return>(url,body)
+}
+servicio_registro_user(correo:string, contrasena:string, nombre: string) : Observable<login_return>{
+  const url = 'http://127.0.0.1:8000/api/registro'; //La url de la api
+  const body = { email: correo, password: contrasena, name:nombre }; //El cuerpo del JSON que se envía a la API
   console.log(body)
   return this.servicio_api.post<login_return>(url,body)
 }
