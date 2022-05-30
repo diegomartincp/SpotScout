@@ -1,14 +1,14 @@
 <body>
-  <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mt-5">
-    <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar" aria-describedby="button-addon2" #texto_query>
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="routing_busqueda(texto_query.value)" >Realizar búsqueda</button>
-    </div>
-  </div>
   <div class="justify-content-center mb-1">
     <div id="carouselExampleCaptions" class="carousel slide relative justify-content-center" data-bs-ride="carousel">
       <div class="jumbotron m-5 position-absolute z-index2 fw-bold">
-        <div class="card mt-5" style="height: 15rem; background-color:rgba(245, 245, 245, .4) ;">
+        <div class="input-group p-3 w-50 row row-cols-2 row-cols-md-3 g-2  align-items-center justify-content-center mt-5 ">
+          <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar" aria-describedby="button-addon2" #texto_query>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="routing_busqueda(texto_query.value)" >Realizar búsqueda</button>
+          </div>
+        </div>
+        <div class="card mt-5 align-items-center" style="height: 12rem; background-color:rgba(245, 245, 245, .4) ;">
         <div class="card-body">
         <h1 class="display-4 fw-bold texto-presentacion align-items-center">Bienvenidos a SpotScout v1.2!</h1>
         <p class=" fw-bold text-black">Esta aplicación se basa en el análisis de sentimiento en
@@ -16,12 +16,6 @@
           seleccionado por estos.<br>
           Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
           de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
-          <div class="absolute input-group m-5 my-5 justify-content-center align-items-end">
-            <div class="input-group-append">
-              <a class="btn btn-outline-secondary text-orange" routerLink="/busqueda"
-              routerLinkActive="active-link" href="/busqueda" role="button">Realizar Busqueda</a>
-            </div>
-          </div>
         </div>
 
         </div>
