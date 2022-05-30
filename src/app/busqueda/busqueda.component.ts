@@ -18,12 +18,11 @@ export class BusquedaComponent implements OnInit {
   numVivAlq: string = "";
 
   tweets:string = "";
-  nombresResEsc = [];
-  valoracionResEsc = [];
-  etiquetasResEsc = [];
+
   nombresRestaurantes : string[] = [];
   valoracionesRestaurantes : string[] = [];
   etiquetasRestaurantes : string[] = [];
+
   imagen = "../assets/images/experience.png";
   resultadoEsc = "0";
   m2Esc = "0";
@@ -62,47 +61,43 @@ export class BusquedaComponent implements OnInit {
       this.numVivVent = data.num_viviendas_venta;
       this.numVivAlq = data.num_viviendas_alquiler;
 
+      //Los restaurantes tienen tres array de string: nombre, puntuacion, etiquetas
 
-      console.log(data.nombre);
-      console.log(data.puntuacion);
-      console.log(data.etiquetas);
-      this.nombresResEsc = data.nombre;
-      this.valoracionResEsc = data.puntuacion;
-      this.etiquetasResEsc = data.etiquetas;
+      //this.nombresResEsc = data.nombre;
+      //this.valoracionResEsc = data.puntuacion;
+      //this.etiquetasResEsc = data.etiquetas;
 
-      String(this.nombresResEsc).replace('"', '')
-      String(this.nombresResEsc).replace('[', '')
+      //Guardamos las variables con los string
+      var nombres=data.nombre;
+      var valoraciones=data.puntuacion;
+      var etiquetas=data.etiquetas;
+      //Eliminamos los elementos del array [ " ]
+      //var nombres=nombres.replace('"', '').replace('[', '').replace(']', '');
+      //var valoraciones=valoraciones.replace('"', '').replace('[', '').replace(']', '');
+      //var etiquetas=etiquetas.replace('"', '').replace('[', '').replace(']', '');
+      console.log(nombres);
+      //Ahora que lo tenemos limpio podemos castear a un array de strings
+      this.nombresRestaurantes=nombres.split(",");
+      this.valoracionesRestaurantes=valoraciones.split(",");
+      this.etiquetasRestaurantes=etiquetas.split(",");
+      console.log(this.nombresRestaurantes);
+      console.log(this.valoracionesRestaurantes);
+      console.log(this.etiquetasRestaurantes);
+      //Para todos los elementos de los 3 array hacemos
+      for(var i=0;i<this.nombresRestaurantes.length;i++){
+        this.nombresRestaurantes[i]=this.nombresRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+        this.valoracionesRestaurantes[i]=this.valoracionesRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+        //this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+      }
+      for(var i=0;i<this.etiquetasRestaurantes.length;i++){
+        this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+      }
 
-      var str = String(this.nombresResEsc);
-      var nombresRestaurantes = [];
-      nombresRestaurantes = str.split(",");
-      console.log(nombresRestaurantes)
-      this.nombresRestaurantes = nombresRestaurantes;
-
-      String(this.valoracionResEsc).replace('"', '')
-      String(this.valoracionResEsc).replace('[', '')
-
-      var str = String(this.valoracionResEsc);
-      var valoracionesRestaurantes = [];
-      valoracionesRestaurantes = str.split(",");
-      console.log(valoracionesRestaurantes)
-      this.valoracionesRestaurantes = valoracionesRestaurantes;
-
-      String(this.etiquetasResEsc).replace('"', '')
-      String(this.etiquetasResEsc).replace('[', '')
-
-      var str = String(this.etiquetasResEsc);
-      var etiquetasRestaurantes = [];
-      etiquetasRestaurantes = str.split(",");
-      console.log(etiquetasRestaurantes)
-      this.etiquetasRestaurantes = etiquetasRestaurantes;
-
-//Convertir array de String de tweets a array de number
+      //Convertir array de String de tweets a array de number
       this.tweets= data.ultimos_100;
       this.tweets=String(this.tweets).replace('"', '').replace('[', '').replace(']', '');  //Quitamos todos los elementos del array " ] [
       var tweets_number_array = <Array<number>><unknown>this.tweets.split(","); //Convertimos la variable con el string en un array de number al castear
-      //var tweets_funcion_array_number=<Array<number>><unknown>tweets_funcion_array_string
-
+      //Generamos la gráfica
       this.chart2(tweets_number_array);
     });
   }
