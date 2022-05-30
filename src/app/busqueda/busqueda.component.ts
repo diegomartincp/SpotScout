@@ -25,8 +25,8 @@ export class BusquedaComponent implements OnInit {
 
   imagen = "../assets/images/experience.png";
   resultadoEsc = 0;
-  m2Esc = "0";
-  medioEsc = "0";
+  m2Esc = "";
+  medioEsc = "";
   tweets_test=[];
   query:any=""
   constructor(
@@ -57,8 +57,8 @@ export class BusquedaComponent implements OnInit {
       //Precio medio y M2
       console.log(data.precio_m2);
       console.log(data.precio_viviendas);
-      this.m2Esc = data.precio_m2;
-      this.medioEsc = data.precio_viviendas;
+      this.m2Esc = data.precio_m2 + " €/m2";
+      this.medioEsc = data.precio_viviendas+ " €";
 
       //Viviendas alquiler y venta
       console.log(data.num_viviendas_venta);

@@ -107,7 +107,7 @@
                             <div class="row no-gutters align-items-center">
                               <div class="col mr-2">
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                  <p class="text-center">{{ medio }}</p>
+                                  <p class="text-center">{{ medio }} </p>
                                   <p class="text-center fw-bold">{{ medioEsc }}</p>
                                 </div>
                               </div>
@@ -178,11 +178,7 @@
                         <div class="mt-4 text-center small">
                           <span class="mr-2">
                             <p class="text-center">{{ resultado }}</p>
-                      <p class="text-center fw-bold">{{ resultadoEsc }}</p>
-                            <i class="fas fa-circle text-primary"></i> Odio
-                          </span>
-                          <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i>No odio
+                            <p class="text-center fw-bold">{{ resultadoEsc }}</p>
                           </span>
                         </div>
                       </div>
@@ -201,12 +197,12 @@
                       </div>
                       <!-- Card Body -->
                       <div class="row">
-                        <div class="col-lg-6 mb-1 mt-1 m-0.5" *ngFor="let nombre of nombresRestaurantes; let i=index;">
+                        <div class="col-lg-6 mb-1 mt-1 m-0.5 mb-2" *ngFor="let nombre of nombresRestaurantes; let i=index;">
                           <div class="card bg-primary text-white shadow">
                             <div class="card-body">
                               {{nombre}}
-                              <div class="text-white-50 small">{{valoracionesRestaurantes[i]}}‎</div>
-                              <div class="text-white-50 small">{{etiquetasRestaurantes[i]}}‎</div>
+                              <div class="text-white-50 small">Puntuación: {{valoracionesRestaurantes[i]}}‎</div>
+                              <div class="text-white-50 small">Tags: {{etiquetasRestaurantes[i]}}‎</div>
                             </div>
                           </div>
                         </div>
@@ -220,56 +216,12 @@
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-              <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                  <span>Copyright &copy; Your Website 2021</span>
-                </div>
-              </div>
-            </footer>
-            <!-- End of Footer -->
-
           </div>
           <!-- End of Content Wrapper -->
-
         </div>
         <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-          <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
       </div>
 
     </div>
-
-
-  <script src="../busqueda/chart-area-demo.js"></script>
-  <script src="../busqueda/chart-bar-demo.js"></script>
-  <script src="../busqueda/chart-pie-demo.js"></script>
 </body>
 </html>
