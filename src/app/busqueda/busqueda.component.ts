@@ -73,9 +73,9 @@ export class BusquedaComponent implements OnInit {
       var etiquetas=data.etiquetas;
 
       //castear a un array de strings
-      this.nombresRestaurantes=nombres.split(",");
-      this.valoracionesRestaurantes=valoraciones.split(",");
-      this.etiquetasRestaurantes=etiquetas.split(",");
+      this.nombresRestaurantes=nombres.split("::"); //ahora recibimos un string y los nombres vienen delimitados por :: en vez de ,
+      this.valoracionesRestaurantes=valoraciones.split("::");
+      this.etiquetasRestaurantes=etiquetas.split("::");
       console.log(this.nombresRestaurantes);
       console.log(this.valoracionesRestaurantes);
       console.log(this.etiquetasRestaurantes);
