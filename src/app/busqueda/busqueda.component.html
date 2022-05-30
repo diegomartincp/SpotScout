@@ -45,7 +45,10 @@
                     </div>
                   </div>
                 </form>
-                <div class='clearfix' id='eliminar'><div class='spinner-border float-right text-primary' role='status'><span class='sr-only'></span></div></div>
+
+
+
+                <!-- <div class='clearfix' id='eliminar'><div class='spinner-border float-right text-primary' role='status'><span class='sr-only'></span></div></div> -->
               </nav>
               <!-- End of Topbar -->
 
@@ -68,6 +71,7 @@
                           <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                               Nº Viviendas en Alquiler</div>
+                              <div class='spinner-border float-center text-primary' *ngIf='cargando' role='status'></div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ numVivAlq }}</div>
                           </div>
                           <div class="col-auto">
@@ -84,9 +88,10 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                               Nº Viviendas en Venta</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{numVivVent}}</div>
+                              <div class='spinner-border float-center text-success' *ngIf='cargando' role='status'></div>
+                            <div class="h5 mb-0 font-weight-bold text-success">{{numVivVent}}</div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -107,7 +112,7 @@
                             <div class="row no-gutters align-items-center">
                               <div class="col mr-2">
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                  <p class="text-center">{{ medio }} </p>
+                                  <div class='spinner-border float-center text-info' *ngIf='cargando' role='status'></div>
                                   <p class="text-center fw-bold">{{ medioEsc }}</p>
                                 </div>
                               </div>
@@ -131,7 +136,7 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                               Media €/Metro Cuadrado</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              <p class="text-center">{{ m2 }}</p>
+                              <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
                               <p class="text-center fw-bold">{{ m2Esc }}</p>
                             </div>
                           </div>
@@ -177,7 +182,6 @@
                         </div>
                         <div class="mt-4 text-center small">
                           <span class="mr-2">
-                            <p class="text-center">{{ resultado }}</p>
                             <p class="text-center fw-bold">{{ resultadoEsc }}</p>
                           </span>
                         </div>

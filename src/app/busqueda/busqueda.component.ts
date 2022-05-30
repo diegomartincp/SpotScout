@@ -4,6 +4,7 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
 import { ActivatedRoute } from '@angular/router';
 //import {Chart} from 'node_modules/chart.js';
 import Chart from 'chart.js/auto';
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-busqueda',
@@ -11,9 +12,6 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./busqueda.component.scss']
 })
 export class BusquedaComponent implements OnInit {
-  resultado: string = "";
-  m2: string = "";
-  medio: string = "";
   numVivVent: string = "";
   numVivAlq: string = "";
 
@@ -23,12 +21,17 @@ export class BusquedaComponent implements OnInit {
   valoracionesRestaurantes : string[] = [];
   etiquetasRestaurantes : string[] = [];
 
-  imagen = "../assets/images/experience.png";
   resultadoEsc = 0;
+
   m2Esc = "";
   medioEsc = "";
-  tweets_test=[];
+
   query:any=""
+
+  cargando: boolean = false;
+
+  myLineChart:any;
+
   constructor(
     public service: ApiComunicationService,
     private _Activatedroute:ActivatedRoute
@@ -36,7 +39,7 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit(): void {
     //this.chart_odio();
-
+    this.cargando=false;
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
       console.log(this.query);
@@ -46,7 +49,17 @@ export class BusquedaComponent implements OnInit {
 
 
   funcion_general(query:string){
+    this.cargando = true;
+    this.m2Esc = "";
+    this.medioEsc = "";
+    this.numVivVent = "";
+    this.numVivAlq = "";
+    this.tweets= "";
+    this.resultadoEsc = 0;
+
     this.service.servicio_busqueda(query).subscribe(data => {
+
+
       //Sentimiento de odio
       console.log(data.porcentaje_odio);
       this.resultadoEsc = <number><unknown>data.porcentaje_odio;
@@ -94,8 +107,15 @@ export class BusquedaComponent implements OnInit {
       this.tweets=String(this.tweets).replace('"', '').replace('[', '').replace(']', '');  //Quitamos todos los elementos del array " ] [
       var tweets_number_array = <Array<number>><unknown>this.tweets.split(","); //Convertimos la variable con el string en un array de number al castear
 
+      console.log("holaaa")
+
       //Generamos la gráfica de tweets
       this.chart_tweets(tweets_number_array);
+      console.log(this.myLineChart);
+
+
+      //todo cargado cambiamos ruleta carga por datos
+      this.cargando = false;
     });
   }
 //CHARTS
