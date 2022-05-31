@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
 import { Router } from '@angular/router';
-
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-sentimiento',
@@ -30,8 +30,25 @@ export class SentimientoComponent implements OnInit {
   //En inicio no es necesario hacer nada
   }
 
-  funcion_general(){
-
+  funcion_general(uno:string, dos:string){
+    /*Swal.fire('Hey user!', 'You are the rockstar!', 'info');
+    Swal.update({
+      icon: 'success'
+    })*/
+    //this.router.navigate(['/index']);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/index']);
+      }
+    })
   }
 
 
