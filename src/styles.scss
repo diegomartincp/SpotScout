@@ -90,6 +90,13 @@ html{
   height: 100%;
 }
 
+.bg-imageIndex{
+  background-image: url("/assets/images/fondo (4).jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
 .tarjetaInput {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -110,6 +117,13 @@ html{
   padding-top: 5%;
   width:auto;
 }
+
+.todoelIndex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /* On mouse-over, add a deeper shadow */
 .tarjetaInput:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -118,15 +132,14 @@ html{
 
 /* Add some padding inside the card container */
 .content {
-
   width: 105%;
 }
 .bg-image{
   background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img7.webp');
   background-attachment: fixed;
 }
-.tamano_total{
-  height: 88vh;
+.todoElRegistro{
+  height: 90vh;
 }
 .navbar-padding-top{
   padding-top: 63px;
@@ -139,3 +152,8 @@ width: 100%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:80vh; ove
   width: 95%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:65vh; overflow: auto;opacity: 0.9;
 }
 
+//login
+.todoElLogin{
+  height: 95vh;
+
+}
