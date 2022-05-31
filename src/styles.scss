@@ -84,9 +84,42 @@ background-color: $gris_claro;
 }
 
 //Padding al body del index para que se vea toda la página
+
 html{
   //padding-bottom: 20px;
   height: 100%;
+}
+
+.tarjetaInput {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: rgba(245, 245, 245, .4);
+  height: 7.5vh;
+  display: flex;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.outer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5%;
+  width:auto;
+}
+/* On mouse-over, add a deeper shadow */
+.tarjetaInput:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+/* Add some padding inside the card container */
+.content {
+
+  width: 105%;
 }
 .bg-image{
   background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img7.webp');
@@ -105,3 +138,4 @@ width: 100%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:80vh; ove
 .tabla_bbdd_busqueda{
   width: 95%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:65vh; overflow: auto;opacity: 0.9;
 }
+

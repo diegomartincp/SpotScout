@@ -1,22 +1,24 @@
 <body>
   <div class="justify-content-center mb-1">
-    <div id="carouselExampleCaptions" class="carousel slide relative justify-content-center" data-bs-ride="carousel">
-      <div class="jumbotron m-5 position-absolute z-index2 fw-bold">
-        <div class="input-group p-3 w-50 row row-cols-2 row-cols-md-3 g-2  align-items-center justify-content-center mt-5 ">
-          <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar" aria-describedby="button-addon2" #texto_query>
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="routing_busqueda(texto_query.value)" >Realizar búsqueda</button>
+    <div id="carouselExampleCaptions" class="carousel d-flex slide absolute justify-content-center" data-bs-ride="carousel">
+      <div class="outer m-5 position-absolute z-index1 fw-bold">
+        <div class="tarjetaInput" style="border-radius:.30rem">
+          <div class=" content input-group align-items-center">
+            <input type="text" class="form-control " placeholder="Introduzca la localidad a buscar" aria-describedby="button-addon2" #texto_query>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="routing_busqueda(texto_query.value)" >Realizar búsqueda</button>
+            </div>
           </div>
         </div>
-        <div class="card mt-5 align-items-center" style="height: 12rem; background-color:rgba(245, 245, 245, .4) ;">
-        <div class="card-body">
-        <h1 class="display-4 fw-bold texto-presentacion align-items-center">Bienvenidos a SpotScout v1.2!</h1>
-        <p class=" fw-bold text-black">Esta aplicación se basa en el análisis de sentimiento en
-          posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
-          seleccionado por estos.<br>
-          Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
-          de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
-        </div>
+        <div class="card mt-5 align-items-center" style="height: 11rem; background-color:rgba(245, 245, 245, .4) ;">
+          <div class="card-body">
+            <h1 class="display-4 fw-bold texto-presentacion align-items-center">Bienvenidos a SpotScout v1.2!</h1>
+            <p class=" fw-bold text-black">Esta aplicación se basa en el análisis de sentimiento en
+              posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
+              seleccionado por estos.<br>
+              Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
+              de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
+          </div>
 
         </div>
 
@@ -36,7 +38,7 @@
       </div>
       <div class="carousel-inner relative w-full overflow-hidden">
         <div class="carousel-item active relative float-left w-full">
-          <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
+          <div class="relative overflow-hidden bg-no-repeat bg-cover bg-fixed" style="background-position: 50%;">
             <img src="../../assets/images/twitter-impact.jpg" class="img-fluid block w-full" />
             <div
               class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50">
