@@ -62,9 +62,9 @@ servicio_login_user(correo:string, contrasena:string) : Observable<login_return>
   console.log(body)
   return this.servicio_api.post<login_return>(url,body)
 }
-servicio_registro_user(correo:string, contrasena:string, nombre: string) : Observable<login_return>{
-  const url = 'http://127.0.0.1:8000/api/registro'; //La url de la api
-  const body = { email: correo, password: contrasena, name:nombre }; //El cuerpo del JSON que se envía a la API
+servicio_registro_user(nombre:string, correo:string, contrasena: string) : Observable<login_return>{
+  const url = 'http://127.0.0.1:8000/api/register'; //La url de la api
+  const body = { name: nombre, email: correo, password: contrasena }; //El cuerpo del JSON que se envía a la API
   console.log(body)
   return this.servicio_api.post<login_return>(url,body)
 }

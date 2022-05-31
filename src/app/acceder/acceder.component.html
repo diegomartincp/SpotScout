@@ -22,25 +22,18 @@
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example4cg">Contraseña</label>
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" #contrasena/>
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" #contrasena1/>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example4cdg">Repita su contraseña</label>
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" #contrasena2/>
                   <p><br></p>
                 </div>
 
-                <div class="col-md-6">
-                  <p>Seleccione su tipo de usuario:</p>
-                  <select class="select" #tipo_user>
-                    <option value="1">Usuario</option>
-                    <option value="2">Administrador</option>
-                  </select>
-                  <p><br></p>
-                </div>
+
                 <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" #checkbox (change)="fieldsChange($event)"/>
                   <label class="form-check-label" for="form2Example3g">
                     Acepto todos los <a href="#!" class="text-body"><u>Términos de uso</u></a>
                   </label>
@@ -48,7 +41,7 @@
 
                 <div class="d-flex justify-content-center">
                   <!--<a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" routerLink="/login"routerLinkActive="active-link" href="/login" role="button" click="crear_usuario(nombre, correo, contrasena)">Registrar</a>-->
-                  <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" type="button" id="button-addon2" (click)="crear_usuario(nombre.value, correo.value, contrasena.value, tipo_user.value)">Realizar búsqueda</button>
+                  <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" type="button" id="button-addon2" (click)="crear_usuario(nombre.value, correo.value, contrasena1.value, contrasena2.value, checkbox.value)">Realizar búsqueda</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 m-0">Ya estoy registrado? <a href="#!" class="fw-bold text-body"
