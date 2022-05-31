@@ -1,115 +1,141 @@
 <body class="d-flex justify-content-center bg-imageIndex">
-  <div class="todoelIndex absolute d-flex justify-content-center" style="height: 885px; width:1350px;">
-    <div id="carouselExampleCaptions" class="carousel d-flex slide absolute justify-content-center" data-bs-ride="carousel">
-      <div class="outer m-5 position-absolute z-index1 fw-bold">
-        <div class="tarjetaInput" style="border-radius:.30rem">
-          <div class=" content input-group align-items-center">
-            <input type="text" class="form-control " placeholder="Introduzca la localidad a buscar" aria-describedby="button-addon2" #texto_query>
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="routing_busqueda(texto_query.value)" >Realizar búsqueda</button>
-            </div>
-          </div>
-        </div>
-        <div class="card mt-5 align-items-center" style="height: 11rem; background-color:rgba(245, 245, 245, .4) ;">
-          <div class="card-body">
-            <h1 class="display-4 fw-bold texto-presentacion align-items-center">Bienvenidos a SpotScout v1.2!</h1>
-            <p class=" fw-bold text-black">Esta aplicación se basa en el análisis de sentimiento en
-              posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
-              seleccionado por estos.<br>
-              Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
-              de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-1">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-          aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner relative w-full overflow-hidden">
-        <div class="carousel-item active relative float-left w-full">
-          <div class="relative overflow-hidden bg-no-repeat bg-cover bg-fixed" style="background-position: 50%;">
-            <img src="../../assets/images/twitter-impact.jpg" class="img-fluid block w-full" />
-            <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50">
-            </div>
-          </div>
-          <div class="carousel-caption hidden absolute text-center fw-bold">
-            <h4 class="text-xl">Gráfica Tweets</h4>
-            <p>Se mostrarán gráficas que mostrarán el análisis del sentimiento de odio sobre una cierta cantidad de
-              tweets.</p>
-          </div>
-        </div>
-        <div class="carousel-item relative float-left w-full">
-
-          <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 100%;">
-
-            <img src="../../assets/images/alquilar.jpg" class="img-fluid block w-full" />
-
-
-          </div>
-
-
-          <div class="carousel-caption hidden md:block absolute text-center fw-bold">
-            <h4 class="text-xl text-black">Conocer datos sobre un barrio</h4>
-            <p class="text-black">Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio
-              seleccionado.</p>
-          </div>
-        </div>
-        <div class="carousel-item relative float-left w-full">
-          <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
-            <img src="../../assets/images/madrid.jpg" class="img-fluid block w-full" />
-            <div
-              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50">
-            </div>
-          </div>
-          <div class="carousel-caption hidden md:block absolute text-center fw-bold">
-            <h4 class="text-xl font-weight-bold">¿Qué restaurantes hay en la zona?</h4>
-            <p class="font-weight-bold">Se podrá obtener una tabala con los 10 mejores restaurantes, con sus respectivos
-              calificaciones, nombres y etiquetas asociados.</p>
-          </div>
-        </div>
-        <div class="carousel-item relative float-left w-full">
-          <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;">
-            <img src="../../assets/images/noticias.jpg" class="img-fluid block w-full" />
-            <div
-              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50">
-            </div>
-          </div>
-          <div class="carousel-caption hidden md:block absolute text-center fw-bold">
-            <h4 class="text-xl">Análisis de noticias de periódicos</h4>
-            <p>Mostraremos una media del sentimiento de odio de las noticias de periódicos publicados durante una fecha
-              determinada sobre un barrio concreto.</p>
+  <div class="todoelIndex absolute d-flex justify-content-center">
+    <div class="outer">
+      <div class="tarjetaInput" style="border-radius:.30rem">
+        <div class="content input-group align-items-center">
+          <input type="text" class="form-control " placeholder="Introduzca la localidad a buscar"
+            aria-describedby="button-addon2" #texto_query>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+              (click)="routing_busqueda(texto_query.value)">Realizar búsqueda</button>
           </div>
         </div>
       </div>
-      <button
-        class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-        type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-        type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="card mt-3 align-items-center mb-5" style="height: 11rem; background-color:rgba(245, 245, 245, .8) ;">
+        <div class="card-body">
+          <h1 class="display-4 fw-bold texto-presentacion align-items-center">Bienvenidos a SpotScout v1.2!</h1>
+          <p class=" fw-bold text-black">Esta aplicación se basa en el análisis de sentimiento en
+            posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
+            seleccionado por estos.<br>
+            Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
+            de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
+        </div>
+      </div>
+      <div class="filasTarjetas row row-cols-1 row-cols-md-2">
+        <div class="col mb-4">
+          <!-- Card -->
+          <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay">
+              <img class="card-img-top" src="../../assets/images/twitter-impact.jpg" alt="Imagen twitter">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <!--Title-->
+              <h4 class="card-title">Gráficas Twitter</h4>
+              <!--Text-->
+              <p class="card-text">Se mostrarán gráficas que mostrarán el análisis del sentimiento de odio sobre una cierta cantidad de
+                tweets.</p>
+              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+              <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+            </div>
+
+          </div>
+          <!-- Card -->
+        </div>
+        <div class="col mb-4">
+          <!-- Card -->
+          <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay">
+              <img class="card-img-top" src="../../assets/images/alquilar.jpg" alt="Imagen alquilar">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <!--Title-->
+              <h4 class="card-title">Conocer datos sobre un barrio</h4>
+              <!--Text-->
+              <p class="card-text">Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio
+                seleccionado.</p>
+              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+              <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+            </div>
+
+          </div>
+          <!-- Card -->
+        </div>
+        <div class="col mb-4">
+          <!-- Card -->
+          <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay">
+              <img class="card-img-top" src="../../assets/images/madrid.jpg" alt="Imagen madrid">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <!--Title-->
+              <h4 class="card-title">¿Qué restaurantes hay en la zona?</h4>
+              <!--Text-->
+              <p class="card-text">Se podrá obtener una tabala con los 10 mejores restaurantes, con sus respectivos
+                calificaciones, nombres y etiquetas asociados.</p>
+              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+              <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+            </div>
+
+          </div>
+          <!-- Card -->
+        </div>
+        <div class="col mb-4">
+          <!-- Card -->
+          <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay">
+              <img class="card-img-top" src="../../assets/images/noticias.jpg" alt="Imagen noticias"
+                alt="Card image cap">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <!--Title-->
+              <h4 class="card-title">Análisis de noticias de periódicos</h4>
+              <!--Text-->
+              <p class="card-text">Mostraremos una media del sentimiento de odio de las noticias de periódicos publicados durante una fecha
+                determinada sobre un barrio concreto.</p>
+              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+              <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+            </div>
+
+          </div>
+          <!-- Card -->
+        </div>
+      </div>
     </div>
   </div>
-
-
-
-
-
-
 </body>

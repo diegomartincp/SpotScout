@@ -89,13 +89,29 @@ html{
   //padding-bottom: 20px;
   height: 100%;
 }
-
+.cardBienvenidos{
+  margin-top: 10vh;
+  background-color: rgba(245, 245, 245, .8);
+  width: 290vh;
+  height: 16vh;
+  border-radius: 10px;
+}
+.textocardBienvenidos{
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
 .bg-imageIndex{
   background-image: url("/assets/images/fondo (4).jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
+  block-size: auto;
 }
 .tarjetaInput {
   /* Add shadows to create the "card" effect */
@@ -108,20 +124,33 @@ html{
   margin-right: auto;
   padding-left: 19px;
   padding-right: 19px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+
 }
 
 .outer{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 5%;
-  width:auto;
+  height: 100vh;
+  width:80vw;
+  padding-top: 13vh;
 }
+.filasTarjetas{
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  width:168vh;
 
+
+}
 .todoelIndex{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 200vh;
+
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -157,3 +186,9 @@ width: 100%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:80vh; ove
   height: 95vh;
 
 }
+
+
+
+
+
+//PRUEBA
