@@ -26,6 +26,7 @@ ejecutar: boolean=true;
       console.log(token_);
       if(token_ && data.user.validado){ //Si token valido y esta validado
         this.router.navigate(['/admin']);
+        this.ejecutar=false;
       }
       else{
         //
