@@ -91,7 +91,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                               Nº Viviendas en Venta</div>
                               <div class='spinner-border float-center text-success' *ngIf='cargando' role='status'></div>
-                            <div class="h5 mb-0 font-weight-bold text-info">{{numVivVent}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{numVivVent}}</div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -205,11 +205,11 @@
                       <div class="row">
                         <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
                         <div class="col-lg-6 mb-1 mt-1 m-0.5 mb-2" *ngFor="let nombre of nombresRestaurantes; let i=index;">
-                          <div class="card bg-primary text-white shadow">
+                          <div class="card bg-primary text-white shadow m-3">
                             <div class="card-body">
                               {{nombre}}
-                              <div class="text-white-50 small">Puntuación: {{valoracionesRestaurantes[i]}}‎</div>
-                              <div class="text-white-50 small">Tags: {{etiquetasRestaurantes[i]}}‎</div>
+                              <div class="text-white-50 small">Puntuación: {{valoracionesRestaurantes[i]}}</div>
+                              <div class="text-white-50 small">Tags: {{etiquetasRestaurantes[i]}}</div>
                             </div>
                           </div>
                         </div>
