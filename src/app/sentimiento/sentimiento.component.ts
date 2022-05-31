@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sentimiento',
@@ -20,33 +22,15 @@ export class SentimientoComponent implements OnInit {
   medioEsc = "0";
 
   constructor(
-    public service: ApiComunicationService
+    public service: ApiComunicationService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
   //En inicio no es necesario hacer nada
   }
 
-  funcion_general(query:string){
-    this.service.servicio_delito_odio(query).subscribe(data => {
-      console.log(data.porcentaje_odio);
-      this.resultadoEsc = data.porcentaje_odio;
-    });
-    this.service.servicio_precio(query).subscribe(data => {
-      console.log(data.precio_m2);
-      console.log(data.precio_viviendas);
-      this.m2Esc = data.precio_m2;
-      this.medioEsc = data.precio_viviendas;
-    });
-  }
-
-  get_resultado_delito_odio(query:string){
-    console.log("hola 1")
-    this.service.servicio_delito_odio(query).subscribe(data => {
-      console.log(data.porcentaje_odio);
-      this.resultadoEsc = data.porcentaje_odio;
-    });
-    console.log("hola 2")
+  funcion_general(){
 
   }
 
