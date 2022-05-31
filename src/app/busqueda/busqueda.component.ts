@@ -45,7 +45,6 @@ export class BusquedaComponent implements OnInit {
   });
   }
 
-
   funcion_general(query:string){
     if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
     if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart

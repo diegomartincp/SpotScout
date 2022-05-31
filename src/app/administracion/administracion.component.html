@@ -31,8 +31,8 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">ID Busqueda en caché</th>
-                  <th scope="col">ID Busqueda realizada</th>
+                  <th scope="col">ID Caché</th>
+                  <th scope="col">ID Busqueda</th>
                   <th scope="col">Query</th>
                   <th scope="col">Created_at</th>
                 </tr>
@@ -40,7 +40,7 @@
 
               <tbody>
                 <tr *ngFor="let busqueda of array">
-                  <th scope="row">{{busqueda['busqueda_id']}}</th>
+                  <th scope="row">{{busqueda['cache_id']}}</th>
                   <td>{{busqueda['id']}}</td>
                   <td>{{busqueda['query']}}</td>
                   <td>{{busqueda['created_at']}}</td>

@@ -7,7 +7,7 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
   styleUrls: ['./administracion-query.component.scss']
 })
 export class AdministracionQueryComponent implements OnInit {
-  array=[]
+  array=[];
   constructor(public service: ApiComunicationService) { }
 
   ngOnInit(): void {
@@ -15,6 +15,10 @@ export class AdministracionQueryComponent implements OnInit {
   funcion_general(query:string){
     this.service.servicio_select_query(query).subscribe(data => {
       this.array = JSON.parse(JSON.stringify(data));
+      console.log(this.array)
+      if(JSON.parse(JSON.stringify(data))==0){
+        window.confirm('La busqueda no ha devuelto resultados')
+      }
     });
   }
 
