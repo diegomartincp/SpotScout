@@ -39,7 +39,7 @@ ejecutar: boolean=true;
         this.ejecutar=false;
       }
     });
-    await this.delay(400);
+    await this.delay(1000);
     if(this.ejecutar){
     Swal.fire({
       icon: 'error',
