@@ -69,7 +69,7 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <div class="text-xs text-primary text-uppercase mb-1 fw-bold">
                               Nº Viviendas en Alquiler</div>
                               <div class='spinner-border float-center text-primary' *ngIf='cargando' role='status'></div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ numVivAlq }}</div>
@@ -88,7 +88,7 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            <div class="text-xs text-success text-uppercase mb-1 fw-bold">
                               Nº Viviendas en Venta</div>
                               <div class='spinner-border float-center text-success' *ngIf='cargando' role='status'></div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{numVivVent}}</div>
@@ -107,7 +107,7 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Precio medio Viviendas
+                            <div class="text-xs text-info text-uppercase mb-1 fw-bold">Precio medio Viviendas
                             </div>
                             <div class="row no-gutters align-items-center">
                               <div class="col mr-2">
@@ -133,7 +133,7 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            <div class="text-xs text-warning text-uppercase mb-1 fw-bold">
                               Media €/Metro Cuadrado</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                               <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
@@ -158,7 +158,7 @@
                     <div class="card shadow mb-4">
                       <!-- Card Header - Dropdown -->
                       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Análisis de Sentimiento de los Últimos 100 Tweets</h6>
+                        <h6 class="m-0 text-InfoTarjetaBusqueda fw-bold">Análisis de Sentimiento de los Últimos 100 Tweets</h6>
                       </div>
                       <!-- Card Body -->
                       <div class="card-body">
@@ -174,7 +174,7 @@
                     <div class="card shadow mb-4">
                       <!-- Card Header - Dropdown -->
                       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Sentimiento de Odio de las Noticias</h6>
+                        <h6 class="m-0 fw-bold text-InfoTarjetaBusqueda">Sentimiento de Odio de las Noticias</h6>
                       </div>
                       <!-- Card Body -->
                       <div class="card-body">
@@ -199,13 +199,13 @@
                     <div class="card shadow mb-4 d-flex justify-content-between">
                       <!-- Card Header - Dropdown -->
                       <div class="card-header py-3 d-flex flex-row  justify-content-between align-items-center ">
-                        <h6 class="m-0 font-weight-bold text-primary mb-2">Listado de Restaurantes de la Zona</h6>
+                        <h6 class="m-0 fw-bold text-InfoTarjetaBusqueda mb-2">Listado de Restaurantes de la Zona</h6>
                       </div>
                       <!-- Card Body -->
                       <div class="row">
                         <div class='spinner-border float-center text-warning' *ngIf='cargando' role='status'></div>
                         <div class="col-lg-6 mb-1 mt-1 m-0.5 mb-2" *ngFor="let nombre of nombresRestaurantes; let i=index;">
-                          <div class="card bg-primary text-white shadow m-3">
+                          <div class="card bg-cardsRestaurantes text-white shadow m-3">
                             <div class="card-body">
                               {{nombre}}
                               <div class="text-white-50 small">Puntuación: {{valoracionesRestaurantes[i]}}</div>

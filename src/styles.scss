@@ -187,8 +187,11 @@ width: 100%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:80vh; ove
 
 }
 
-
-
-
-
-//PRUEBA
+//busquedas tarjetas
+.bg-cardsRestaurantes{
+  background-color: $azul_principal;
+}
+.text-InfoTarjetaBusqueda{
+  color: $azul_principal;
+  font-size: 17px;
+}
