@@ -25,7 +25,7 @@
 
 
                 <!-- Topbar Search -->
-                <form class="input-group p-3 w-50  align-items-center">
+                <form class="input-group p-3 w-50 align-items-center">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
                       aria-describedby="button-addon2" #query>
@@ -40,9 +40,9 @@
                         while(m2Esc=0){
                           setTimeout(eliminarLoading,0);
                         }
-
                       ">Realizar búsqueda</button>
                     </div>
+
                   </div>
                 </form>
 
@@ -56,8 +56,14 @@
               <div class="container-fluid mt-5">
 
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                  <h1 class="h3 mb-0 text-gray-800">Cuadro de Busqueda</h1>
+                <div class="d-flex mb-4">
+
+                  <h1 class="h3 mb-0 text-gray-800 mr-5">Cuadro de Busqueda</h1>
+                  <div style="margin-left:15px">
+                    <div class='spinner-border float-center text-primary' *ngIf='cargando' role='status'></div>
+                  </div>
+
+
                 </div>
 
                 <!-- Content Row -->
