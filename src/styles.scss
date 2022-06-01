@@ -92,8 +92,8 @@ html{
 .cardBienvenidos{
   margin-top: 10vh;
   background-color: rgba(245, 245, 245, .8);
-  width: 290vh;
-  height: 16vh;
+  width: 70%;
+  height: auto;
   border-radius: 10px;
 }
 .textocardBienvenidos{
@@ -134,13 +134,14 @@ html{
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  width:80vw;
-  padding-top: 13vh;
+  width:auto;
+
+  margin: 5%;
 }
 .filasTarjetas{
   display: flex;
   justify-content: center;
-  height: 60%;
+  height: 100%;
   width:auto;
 }
 .todoelIndex{
@@ -212,4 +213,9 @@ width: 100%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:80vh; ove
    flex-direction: row;
    list-style: none;
    width: max-content;
+ }
+
+
+ .cardInformativa{
+   height: 100%;
  }
