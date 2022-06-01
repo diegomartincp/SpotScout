@@ -133,24 +133,21 @@ html{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   width:80vw;
   padding-top: 13vh;
 }
 .filasTarjetas{
   display: flex;
   justify-content: center;
-  height: 60vh;
-  width:168vh;
-
-
+  height: 60%;
+  width:auto;
 }
 .todoelIndex{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 200vh;
-
+  height: 200%;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -195,3 +192,24 @@ width: 100%;margin:0 10 0 10;margin-right: 10px; padding:10px;  height:80vh; ove
   color: $azul_principal;
   font-size: 17px;
 }
+
+//spinners de carga
+.spinnerCardSentimientos{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+.spinnerCards{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+ }
+
+ .flexBarraBusqueda{
+   display: flex;
+   flex-direction: row;
+   list-style: none;
+   width: max-content;
+ }
