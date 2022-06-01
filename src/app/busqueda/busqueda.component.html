@@ -25,7 +25,7 @@
 
 
                 <!-- Topbar Search -->
-                <form class="input-group p-3 w-50  align-items-center">
+                <form class="input-group p-3 w-50 align-items-center">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
                       aria-describedby="button-addon2" #query>
@@ -40,8 +40,11 @@
                         while(m2Esc=0){
                           setTimeout(eliminarLoading,0);
                         }
-
                       ">Realizar búsqueda</button>
+                    </div>
+                    <div class="m-1"></div><div class="m-1"></div>
+                    <div class="m-1">
+                      <div class='spinner-border float-center text-primary' *ngIf='cargando' role='status'></div>
                     </div>
                   </div>
                 </form>
