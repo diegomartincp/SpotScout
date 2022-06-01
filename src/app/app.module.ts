@@ -14,7 +14,9 @@ import { LoginComponent } from './login/login.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { AdministracionComponent } from './administracion/administracion.component';
 import { AdministracionCacheComponent } from './administracion-cache/administracion-cache.component';
-import { AdministracionQueryComponent } from './administracion-query/administracion-query.component'; //Se importa la librería para la llamada a la api
+import { AdministracionQueryComponent } from './administracion-query/administracion-query.component';
+import { AdministracionValidacionComponent } from './administracion-validacion/administracion-validacion.component';
+import { AdministracionModificarBBDDComponent } from './administracion-modificar-bbdd/administracion-modificar-bbdd.component'; //Se importa la librería para la llamada a la api
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AdministracionQueryComponent } from './administracion-query/administrac
     BusquedaComponent,
     AdministracionComponent,
     AdministracionCacheComponent,
-    AdministracionQueryComponent
+    AdministracionQueryComponent,
+    AdministracionValidacionComponent,
+    AdministracionModificarBBDDComponent
   ],
   imports: [
     BrowserModule,

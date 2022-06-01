@@ -111,7 +111,7 @@ export class BusquedaComponent implements OnInit {
       //Generamos la gráfica de tweets
 
       this.chart_tweets(tweets_number_array);
-
+      console.log(tweets_number_array);
 
       //todo cargado cambiamos ruleta carga por datos
       this.cargando = false;
@@ -121,7 +121,8 @@ export class BusquedaComponent implements OnInit {
 
 //CHART 2
 chart_tweets(tweets: Number[]){
-  var labels_=Array.from(Array(100).keys());
+  var labels_=Array.from(Array(tweets.length).keys());
+  //console.log(tweets.length)
 
   this.myLineChart = new Chart("myAreaChart", {
     type: 'line',

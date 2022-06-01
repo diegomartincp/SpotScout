@@ -106,4 +106,44 @@ servicio_select_query(query:string) : Observable<busqueda>{
   console.log(path)
   return this.servicio_api.get<busqueda>(path,{ headers })
 }
+
+
+servicio_select_user() : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
+
+  let path ='http://127.0.0.1:8000/api/select_usuarios'
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
+}
+
+
+servicio_update_user_validar(id:number) : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
+  let path ='http://127.0.0.1:8000/api/update_user_validar/?id='+id
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
+}
+
+servicio_select_numero_tweets() : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
+  let path ='http://127.0.0.1:8000/api/select_ultimos_Tweets'
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
+}
+
+servicio_cambiar_numero_tweets(cantidad:number) : Observable<busqueda>{
+  const token_ = localStorage.getItem('token');
+  const headers = { 'Authorization': 'Bearer '+token_}
+  console.log(headers);
+  let path ='http://127.0.0.1:8000/api/modificar_ultimos_Tweets?numero_tweets='+cantidad
+  console.log(path)
+  return this.servicio_api.get<busqueda>(path,{ headers })
+}
+
 }
