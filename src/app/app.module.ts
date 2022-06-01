@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
-import { SentimientoComponent } from './sentimiento/sentimiento.component';
 import{ HttpClientModule } from '@angular/common/http';
 import { AccederComponent } from './acceder/acceder.component';
 import { LoginComponent } from './login/login.component';
@@ -23,7 +22,6 @@ import { AdministracionQueryComponent } from './administracion-query/administrac
     NavComponent,
     FooterComponent,
     IndexComponent,
-    SentimientoComponent,
     AccederComponent,
     LoginComponent,
     BusquedaComponent,
