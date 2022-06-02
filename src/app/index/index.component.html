@@ -1,141 +1,148 @@
-<body class="d-flex justify-content-center bg-imageIndex">
-  <div class="todoelIndex absolute d-flex justify-content-center">
-    <div class="outer">
-      <div class="tarjetaInput" style="border-radius:.30rem">
-        <div class="content input-group align-items-center">
-          <input type="text" class="form-control " placeholder="Introduzca la localidad a buscar"
-            aria-describedby="button-addon2" #texto_query>
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-              (click)="routing_busqueda(texto_query.value)">Realizar búsqueda</button>
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+
+
+  <!-- ======= Header ======= -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container" data-aos="fade-in">
+      <h1 class="d-flex justify-content-center">Bienvenido a SpotScout</h1>
+      <h2 class="d-flex justify-content-center">Una empresa diferente. Un tipo de explorador de hogar diferente.</h2>
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="tarjetaInput" style="border-radius:.30rem">
+          <div class="content input-group align-items-center">
+            <input type="text" class="form-control " placeholder="Introduzca la localidad a buscar"
+              aria-describedby="button-addon2" #texto_query>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                (click)="routing_busqueda(texto_query.value)">Realizar búsqueda</button>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="card mt-3 align-items-center mb-5" style="height: 11rem; background-color:rgba(245, 245, 245, .8) ;">
-        <div class="card-body">
-          <h1 class="display-4 fw-bold texto-presentacion align-items-center">Bienvenidos a SpotScout v1.2!</h1>
-          <p class=" fw-bold text-black">Esta aplicación se basa en el análisis de sentimiento en
-            posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
-            seleccionado por estos.<br>
-            Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
-            de este modo sea más fácil encontrar el mejor sitio para vivir.</p>
-        </div>
-      </div>
-      <div class="filasTarjetas row row-cols-2 row-cols-md-4">
-        <div class="col mb-4">
-          <!-- Card -->
-          <div class="card cardInformativa">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="../../assets/images/twitter-impact.jpg" alt="Imagen twitter">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">Gráficas Twitter</h4>
-              <!--Text-->
-              <p class="card-text">Se mostrarán gráficas que mostrarán el análisis del sentimiento de odio sobre una cierta cantidad de
-                tweets.</p>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <button type="button" class="btn btn-light-blue btn-md"></button>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-        </div>
-        <div class="col mb-4">
-          <!-- Card -->
-          <div class="card cardInformativa">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="../../assets/images/alquilar.jpg" alt="Imagen alquilar">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">Conocer datos sobre un barrio</h4>
-              <!--Text-->
-              <p class="card-text">Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un barrio
-                seleccionado.</p>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <button type="button" class="btn btn-light-blue btn-md"></button>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-        </div>
-        <div class="col mb-4">
-          <!-- Card -->
-          <div class="card cardInformativa">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="../../assets/images/madrid.jpg" alt="Imagen madrid">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">¿Qué restaurantes hay en la zona?</h4>
-              <!--Text-->
-              <p class="card-text">Se podrá obtener una tabala con los 10 mejores restaurantes, con sus respectivos
-                calificaciones, nombres y etiquetas asociados.</p>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <button type="button" class="btn btn-light-blue btn-md"></button>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-        </div>
-        <div class="col mb-4">
-          <!-- Card -->
-          <div class="card cardInformativa">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="../../assets/images/noticias.jpg" alt="Imagen noticias"
-                alt="Card image cap">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">Análisis de noticias de periódicos</h4>
-              <!--Text-->
-              <p class="card-text">Mostraremos una media del sentimiento de odio de las noticias de periódicos publicados durante una fecha
-                determinada sobre un barrio concreto.</p>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-
-
-            </div>
-
-          </div>
-          <!-- Card -->
         </div>
       </div>
     </div>
-  </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+            <div class="content">
+              <h3>¿Por qué elegir SpotScout como su buscador de hogar favorito?</h3>
+              <p>
+                Esta aplicación se basa en el análisis de sentimiento en
+                posts de periódicos, redes sociales, y en ofrecer datos interesantes a los usuarios sobre un barrio
+                seleccionado por estos.
+                <br>
+                <br>
+                Esto nos ofrecerá una forma de visualizar el sentimiento general de un lugar, para que
+                de este modo sea más fácil encontrar el mejor sitio para vivir.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-8 col-lg-7 d-flex mt-3">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-6 d-flex align-items-stretch mb-2 bac" data-aos="fade-up" data-aos-delay="100">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Gráficas Twitter</h4>
+                    <p>Se mostrarán gráficas que mostrarán el análisis del sentimiento de odio sobre una cierta cantidad
+                      de
+                      tweets.</p>
+                  </div>
+                </div>
+                <div class="col-xl-6 d-flex align-items-stretch mb-2" data-aos="fade-up" data-aos-delay="200">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Conocer datos sobre un barrio</h4>
+                    <p>Se podrán observar datos sobre los precios de viviendas, o bien, precios del metro cuadrado de un
+                      barrio
+                      seleccionado.</p>
+                  </div>
+                </div>
+                <div class="col-xl-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>¿Qué restaurantes hay en la zona?</h4>
+                    <p>Se podrá obtener una tabala con los 10 mejores restaurantes, con sus respectivos
+                      calificaciones, nombres y etiquetas asociados.</p>
+                  </div>
+                </div>
+                <div class="col-xl-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                  data-aos-delay="300">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Análisis de noticias de periódicos</h4>
+                    <p>Mostraremos una media del sentimiento de odio de las noticias de periódicos publicados durante
+                      una fecha
+                      determinada sobre un barrio concreto.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative"
+            data-aos="fade-right">
+          </div>
+
+          <div
+            class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h4 data-aos="fade-up">Sobre Nosotros</h4>
+            <h3 data-aos="fade-up">¿Quiénes somos y por qué SpotScout?</h3>
+            <p data-aos="fade-up">Somos un grupo de 4 futuros ingenieros informáticos, que decidieron dar solución a un
+              problema:</p>
+            <p class="fw-bold">¿Cómo puedo saber si al barrio al que me quiero mudar es el ideal?</p>
+
+            <div class="icon-box" data-aos="fade-up">
+              <div class="icon"><i class="fal fa-calendar-alt"></i></div>
+              <h4 class="title"><a href="">Objetivos</a></h4>
+              <p class="description">Resolver ese problema aportando mediante web scrapping todos los datos posibles
+                acerca del barrio seleccionado.</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Mercado</a></h4>
+              <p class="description">El mercado objetivo de esta página web no tiene límites, ya que es tan
+                sencilla de utilizar que todo el mundo puede hacer uso de esta.</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title"><a href="">Futuras líneas de trabajo</a></h4>
+              <p class="description">Se está trabajano en la implementación de una página web que sea capaz de analizar
+                los mercados inmobiliarios de barrios internacionales, e incluso de ciudades enteras.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+  </main><!-- End #main -->
+
 </body>
+
+</html>
