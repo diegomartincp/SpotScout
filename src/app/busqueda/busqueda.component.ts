@@ -27,7 +27,7 @@ export class BusquedaComponent implements OnInit {
   query:any=""
   myLineChart: any;
   myPieChart:any;
-  cargando: boolean = false;
+  cargando: boolean = true;
 
   constructor(
     public service: ApiComunicationService,
@@ -37,7 +37,7 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit(): void {
     //this.chart_odio();
-    this.cargando=false;
+    this.cargando=true;
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
       console.log(this.query);
@@ -48,17 +48,15 @@ export class BusquedaComponent implements OnInit {
   funcion_general(query:string){
     if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
     if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
-    this.cargando = true;
+    this.cargando = false;
     this.m2Esc = "";
     this.medioEsc = "";
     this.numVivVent = "";
     this.numVivAlq = "";
     this.tweets= "";
     this.resultadoEsc = 0;
-
     this.service.servicio_busqueda(query).subscribe(data => {
-
-
+      this.cargando = true;
       //Sentimiento de odio
       console.log(data.porcentaje_odio);
       this.resultadoEsc = <number><unknown>data.porcentaje_odio;
@@ -114,7 +112,7 @@ export class BusquedaComponent implements OnInit {
       console.log(tweets_number_array);
 
       //todo cargado cambiamos ruleta carga por datos
-      this.cargando = false;
+
     });
   }
 //CHARTS
