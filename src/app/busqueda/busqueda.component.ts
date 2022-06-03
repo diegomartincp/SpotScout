@@ -17,6 +17,7 @@ export class BusquedaComponent implements OnInit {
   nombresRestaurantes : string[] = [];
   valoracionesRestaurantes : string[] = [];
   etiquetasRestaurantes : string[] = [];
+  imagenesRestaurantes : string[] = ["imagenRestaurante1.jpg","imagenRestaurante2.jpg","imagenRestaurante3.jpg","imagenRestaurante4.jpg","imagenRestaurante5.jpg","imagenRestaurante6.jpg","imagenRestaurante7.jpg","imagenRestaurante8.jpg","imagenRestaurante9.jpg","imagenRestaurante10.jpg"];
 
   resultadoEsc = 0;
 
@@ -41,6 +42,7 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit(): void {
     //this.chart_odio();
+    this.imagenesRestaurantes.sort(()=> Math.random() - 0.5);
     this.cargando=false;
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
