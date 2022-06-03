@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NEVER } from 'rxjs';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
 import { ActivatedRoute } from '@angular/router';
-//import {Chart} from 'node_modules/chart.js';
 import Chart from 'chart.js/auto';
-import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-busqueda',
@@ -29,6 +28,11 @@ export class BusquedaComponent implements OnInit {
   myPieChart:any;
   cargando: boolean = true;
 
+  tweetsListo: boolean =false;
+  grafica1:string ="";
+  tamano=8
+  mostrar='hidden'
+
   constructor(
     public service: ApiComunicationService,
     private _Activatedroute:ActivatedRoute,
@@ -37,18 +41,34 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit(): void {
     //this.chart_odio();
-    this.cargando=true;
+    this.cargando=false;
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
       console.log(this.query);
       if(this.query){this.funcion_general(this.query)}
-  });
+    });
   }
 
   funcion_general(query:string){
-    if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
-    if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
-    this.cargando = false;
+    this.mostrar='visible'
+    this.tamano = 8
+    Swal.fire({
+      title: '<strong>HTML <u>example</u></strong>',
+      icon: 'info',
+      html:
+        'You can use <b>bold text</b>, ' +
+        '<a href="//sweetalert2.github.io">links</a> ' +
+        'and other HTML tags',
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Great!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      cancelButtonText:
+        '<i class="fa fa-thumbs-down"></i>',
+      cancelButtonAriaLabel: 'Thumbs down'
+    })
     this.m2Esc = "";
     this.medioEsc = "";
     this.numVivVent = "";
@@ -56,7 +76,15 @@ export class BusquedaComponent implements OnInit {
     this.tweets= "";
     this.resultadoEsc = 0;
     this.service.servicio_busqueda(query).subscribe(data => {
-      this.cargando = true;
+
+
+      if (this.myLineChart){
+        this.myLineChart.destroy();
+        console.log("graficaa")
+      }  //destroy del chart
+      if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
+
+
       //Sentimiento de odio
       console.log(data.porcentaje_odio);
       this.resultadoEsc = <number><unknown>data.porcentaje_odio;
@@ -107,13 +135,17 @@ export class BusquedaComponent implements OnInit {
       console.log("holaaa")
 
       //Generamos la gráfica de tweets
-
+      this.grafica1 = '<canvas id="myAreaChart"></canvas>'
       this.chart_tweets(tweets_number_array);
       console.log(tweets_number_array);
 
+      console.log("eey que pasa 2")
       //todo cargado cambiamos ruleta carga por datos
+      this.tamano = 0
+      Swal.close()
 
     });
+
   }
 //CHARTS
 
@@ -175,7 +207,8 @@ chart_tweets(tweets: Number[]){
 
     }
   })
-  //if(myLineChart) myLineChart.destroy(); //destroy del chart
+  this.tweetsListo = true;
+
 }
 
 chart_odio(odio: number, no_odio: number){

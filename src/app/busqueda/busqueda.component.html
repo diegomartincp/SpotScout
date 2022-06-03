@@ -30,58 +30,38 @@
                     <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
                       aria-describedby="button-addon2" #query>
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                        (click)="funcion_general(query.value)" onclick="
-                        function eliminarLoading(){
-                          loading = document.getElementById('eliminar');
-                          padre = loading.parentNode;
-                          padre.removeChild(loading);
-                        }
-                        while(m2Esc=0){
-                          setTimeout(eliminarLoading,0);
-                        }
-                      ">Realizar búsqueda</button>
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="funcion_general(query.value)">Realizar búsqueda</button>
                     </div>
 
                   </div>
                 </form>
-
-
-
                 <!-- <div class='clearfix' id='eliminar'><div class='spinner-border float-right text-primary' role='status'><span class='sr-only'></span></div></div> -->
               </nav>
               <!-- End of Topbar -->
 
-              <!-- Begin Page Content -->
+              <!-- Begin Page Content  [style.visibility]="mostrar" -->
 
 
-              <!--<div class="container-fluid mt-5" *ngIf='cargando'>-->
-              <div class="container-fluid mt-5">
+              <div class="container-fluid mt-5" [style.filter]="'blur(' + tamano + 'px)'">
 
                 <!-- Page Heading -->
                 <div class="d-flex mb-4">
-
-                  <h1 class="h3 mb-0 text-gray-800 mr-5">Cuadro de Busqueda</h1>
+                  <h1 class="h3 mb-0 text-gray-800 mr-5" >Cuadro de Busqueda</h1>
                   <div style="margin-left:15px">
-
                   </div>
-
-
                 </div>
 
-                <!-- Content Row -->
+                <!-- Tarjetas -->
                 <div class="row">
-
                   <!-- Earnings (Monthly) Card Example -->
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs text-primary text-uppercase mb-1 fw-bold">
-                              Nº Viviendas en Alquiler</div>
-
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ numVivAlq }}</div>
+                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoAlquilar.jpg" width="100" height="100" alt="Alquiler viviendas" ></div>
+                            <div class="text-xs text-primary text-uppercase mb-1 fw-bold" style="text-align: center;"> Nº Viviendas en Alquiler</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{ numVivAlq }}</div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -90,16 +70,15 @@
                       </div>
                     </div>
                   </div>
-
                   <!-- Earnings (Monthly) Card Example -->
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs text-success text-uppercase mb-1 fw-bold">
-                              Nº Viviendas en Venta</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{numVivVent}}</div>
+                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoComprar.jpg" width="100" height="100" alt="Venta viviendas" ></div>
+                            <div class="text-xs text-success text-uppercase mb-1 fw-bold" style="text-align: center;">Nº Viviendas en Venta</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{numVivVent}}</div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -108,15 +87,14 @@
                       </div>
                     </div>
                   </div>
-
                   <!-- Earnings (Monthly) Card Example -->
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-info shadow h-100 py-2">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs text-info text-uppercase mb-1 fw-bold">Precio medio Viviendas
-                            </div>
+                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoPrecioMedio.jpg" width="100" height="100" alt="Precio medio vivienda" ></div>
+                            <div class="text-xs text-info text-uppercase mb-1 fw-bold" style="text-align: center;">Precio medio Viviendas</div>
                             <div class="row no-gutters align-items-center">
                               <div class="col mr-2">
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -133,15 +111,14 @@
                       </div>
                     </div>
                   </div>
-
                   <!-- Pending Requests Card Example -->
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-warning shadow h-100 py-2">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs text-warning text-uppercase mb-1 fw-bold">
-                              Media €/Metro Cuadrado</div>
+                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoM2.jpg" width="100" height="100" alt="Precio m2" ></div>
+                            <div class="text-xs text-warning text-uppercase mb-1 fw-bold" style="text-align: center;">Media €/Metro Cuadrado</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                               <p class="text-center fw-bold">{{ m2Esc }}</p>
                             </div>
@@ -155,9 +132,8 @@
                   </div>
                 </div>
 
-                <!-- Content Row -->
-
-                <div class="row mt-5">
+                <!-- Graficas -->
+                <div class="row mt-5 fixed">
 
                   <!-- Area Chart -->
                   <div class="col-xl-7 col-lg-7">
@@ -169,7 +145,7 @@
                       <!-- Card Body -->
                       <div class="card-body">
                         <div class="chart-area pt-4 pb-5">
-                          <canvas id="myAreaChart"></canvas>
+                           <canvas id="myAreaChart"></canvas>
                         </div>
                       </div>
                     </div>
@@ -196,6 +172,7 @@
                   </div>
                 </div>
 
+                <!-- Restaurantes -->
                 <div class="row d-flex mt-5 justify-content-center align-items-center">
 
                   <!-- Pie Chart -->
