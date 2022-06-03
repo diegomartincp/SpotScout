@@ -1,196 +1,226 @@
 <html>
-  <body>
-    <div class="card fotoFondoBusqueda">
 
-      <div class="card-body">
+<body>
+  <div class="card fotoFondoBusqueda">
 
-        <!-- Page Wrapper -->
-        <div id="wrapper">
+    <div class="card-body">
 
-          <!-- Sidebar -->
-          <!-- End of Sidebar -->
+      <!-- Page Wrapper -->
+      <div id="wrapper">
 
-          <!-- Content Wrapper -->
-          <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Sidebar -->
+        <!-- End of Sidebar -->
 
-            <!-- Main Content -->
-            <div id="content">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-              <!-- Topbar -->
-              <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <!-- Main Content -->
+          <div id="content">
 
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                  <i class="fa fa-bars"></i>
-                </button>
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+              <!-- Sidebar Toggle (Topbar) -->
+              <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+              </button>
 
 
-                <!-- Topbar Search -->
-                <form class="input-group p-3 w-50 align-items-center">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
-                      aria-describedby="button-addon2" #query>
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="funcion_general(query.value)">Realizar búsqueda</button>
-                    </div>
-
+              <!-- Topbar Search -->
+              <form class="input-group p-3 w-50 align-items-center">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Introduzca la localidad a buscar"
+                    aria-describedby="button-addon2" #query>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                      (click)="funcion_general(query.value)">Realizar búsqueda</button>
                   </div>
-                </form>
-                <!-- <div class='clearfix' id='eliminar'><div class='spinner-border float-right text-primary' role='status'><span class='sr-only'></span></div></div> -->
-              </nav>
-              <!-- End of Topbar -->
 
-              <!-- Begin Page Content  [style.visibility]="mostrar" -->
+                </div>
+              </form>
+              <!-- <div class='clearfix' id='eliminar'><div class='spinner-border float-right text-primary' role='status'><span class='sr-only'></span></div></div> -->
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content  [style.visibility]="mostrar" -->
 
 
-              <div class="container-fluid mt-5" [style.filter]="'blur(' + tamano + 'px)'">
+            <div class="container-fluid mt-5" [style.filter]="'blur(' + tamano + 'px)'">
 
-                <!-- Page Heading -->
-                <div class="d-flex mb-4">
-                  <h1 class="h3 mb-0 text-gray-800 mr-5" >{{query.value}}</h1>
-                  <div style="margin-left:15px">
+              <!-- Page Heading -->
+              <div class="d-flex mb-4">
+                <h1 class="h3 mb-0 text-gray-800 mr-5">{{query.value}}</h1>
+                <div style="margin-left:15px">
+                </div>
+              </div>
+
+              <!-- Tarjetas -->
+              <div class="row">
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div style="text-align: center; margin-bottom: 30px"><img
+                              src="../../assets/images/iconoAlquilar.jpg" width="100" height="100"
+                              alt="Alquiler viviendas"></div>
+                          <div class="text-xs text-primary text-uppercase mb-1 fw-bold" style="text-align: center;">Nº
+                            Viviendas en Alquiler</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{ numVivAlq
+                            }}</div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div style="text-align: center; margin-bottom: 30px"><img
+                              src="../../assets/images/iconoComprar.jpg" width="100" height="100" alt="Venta viviendas">
+                          </div>
+                          <div class="text-xs text-success text-uppercase mb-1 fw-bold" style="text-align: center;">Nº
+                            Viviendas en Venta</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{numVivVent}}
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div style="text-align: center; margin-bottom: 30px"><img
+                              src="../../assets/images/iconoPrecioMedio.jpg" width="100" height="100"
+                              alt="Precio medio vivienda"></div>
+                          <div class="text-xs text-info text-uppercase mb-1 fw-bold" style="text-align: center;">Precio
+                            medio Viviendas</div>
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <p class="text-center fw-bold">{{ medioEsc }}</p>
+                              </div>
+                            </div>
 
-                <!-- Tarjetas -->
-                <div class="row">
-                  <!-- Earnings (Monthly) Card Example -->
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoAlquilar.jpg" width="100" height="100" alt="Alquiler viviendas" ></div>
-                            <div class="text-xs text-primary text-uppercase mb-1 fw-bold" style="text-align: center;">Nº Viviendas en Alquiler</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{ numVivAlq }}</div>
                           </div>
-                          <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- Earnings (Monthly) Card Example -->
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-success shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoComprar.jpg" width="100" height="100" alt="Venta viviendas" ></div>
-                            <div class="text-xs text-success text-uppercase mb-1 fw-bold" style="text-align: center;">Nº Viviendas en Venta</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{numVivVent}}</div>
+                </div>
+                <!-- Pending Requests Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div style="text-align: center; margin-bottom: 30px"><img
+                              src="../../assets/images/iconoM2.jpg" width="100" height="100" alt="Precio m2"></div>
+                          <div class="text-xs text-warning text-uppercase mb-1 fw-bold" style="text-align: center;">
+                            Media €/Metro Cuadrado</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            <p class="text-center fw-bold">{{ m2Esc }}</p>
                           </div>
-                          <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- Earnings (Monthly) Card Example -->
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-info shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoPrecioMedio.jpg" width="100" height="100" alt="Precio medio vivienda" ></div>
-                            <div class="text-xs text-info text-uppercase mb-1 fw-bold" style="text-align: center;">Precio medio Viviendas</div>
-                            <div class="row no-gutters align-items-center">
-                              <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                  <p class="text-center fw-bold">{{ medioEsc }}</p>
+                </div>
+              </div>
+
+              <!-- Graficas -->
+              <div class="row mt-5 fixed">
+
+                <!-- Area Chart -->
+                <div class="col-xl-7 col-lg-7">
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 text-InfoTarjetaBusqueda fw-bold">Análisis de Sentimiento de los Últimos 100 Tweets
+                      </h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                      <div class="chart-area pt-4 pb-5">
+                        <canvas id="myAreaChart"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pie Chart -->
+                <div class="col-xl-5 col-lg-5">
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 fw-bold text-InfoTarjetaBusqueda">Sentimiento de Odio de las Noticias</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                      <div class="chart-pie pt-4 pb-2">
+                        <canvas id="myPieChart"></canvas>
+                      </div>
+                      <div class="mt-4 text-center small">
+                        <span class="mr-2">
+                          <p class="text-center fw-bold">{{ resultadoEsc }}</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Restaurantes -->
+              <div class="row d-flex mt-5 justify-content-center align-items-center">
+
+                <!-- Pie Chart -->
+                <div class="col-xl-12 col-lg-7">
+                  <div class="card shadow mb-4 d-flex justify-content-between">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row  justify-content-center align-items-center ">
+                      <h6 class="m-0 fw-bold text-InfoTarjetaBusqueda mb-2 d-flex justify-content-center">Listado de
+                        Restaurantes de la Zona</h6>
+                    </div>
+                  </div>
+                  <!-- Card Body -->
+                  <div class="why-us border-left-primary" style="background-color: transparent;">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xl-12 col-lg-12 d-flex mt-3">
+                          <div class="icon-boxes d-flex flex-column justify-content-center">
+                            <div class="row">
+                              <div class="col-xl-3 d-flex align-items-stretch mb-2 bac" data-aos="fade-up"
+                                data-aos-delay="100" *ngFor="let nombre of nombresRestaurantes; let i=index;">
+                                <div class="icon-box mt-4 mt-xl-0" style="height: 90%;">
+                                  <div class="row">
+                                    <img src="../../assets/images/fondo (3).jpg">
+                                  </div>
+                                  <div class="row">
+                                    <h4>{{nombre}}</h4>
+                                    <p>Puntuación: {{valoracionesRestaurantes[i]}}</p>
+                                    <p>Tags: {{etiquetasRestaurantes[i]}}</p>
+                                  </div>
                                 </div>
                               </div>
-
-                            </div>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Pending Requests Card Example -->
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-warning shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div style="text-align: center; margin-bottom: 30px"><img src="../../assets/images/iconoM2.jpg" width="100" height="100" alt="Precio m2" ></div>
-                            <div class="text-xs text-warning text-uppercase mb-1 fw-bold" style="text-align: center;">Media €/Metro Cuadrado</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              <p class="text-center fw-bold">{{ m2Esc }}</p>
-                            </div>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Graficas -->
-                <div class="row mt-5 fixed">
-
-                  <!-- Area Chart -->
-                  <div class="col-xl-7 col-lg-7">
-                    <div class="card shadow mb-4">
-                      <!-- Card Header - Dropdown -->
-                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 text-InfoTarjetaBusqueda fw-bold">Análisis de Sentimiento de los Últimos 100 Tweets</h6>
-                      </div>
-                      <!-- Card Body -->
-                      <div class="card-body">
-                        <div class="chart-area pt-4 pb-5">
-                           <canvas id="myAreaChart"></canvas>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Pie Chart -->
-                  <div class="col-xl-5 col-lg-5">
-                    <div class="card shadow mb-4">
-                      <!-- Card Header - Dropdown -->
-                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 fw-bold text-InfoTarjetaBusqueda">Sentimiento de Odio de las Noticias</h6>
-                      </div>
-                      <!-- Card Body -->
-                      <div class="card-body">
-                        <div class="chart-pie pt-4 pb-2">
-                          <canvas id="myPieChart"></canvas>
-                        </div>
-                        <div class="mt-4 text-center small">
-                          <span class="mr-2">
-                            <p class="text-center fw-bold">{{ resultadoEsc }}</p>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Restaurantes -->
-                <div class="row d-flex mt-5 justify-content-center align-items-center">
-
-                  <!-- Pie Chart -->
-                  <div class="col-xl-12 col-lg-7">
-                    <div class="card shadow mb-4 d-flex justify-content-between">
-                      <!-- Card Header - Dropdown -->
-                      <div class="card-header py-3 d-flex flex-row  justify-content-between align-items-center ">
-                        <h6 class="m-0 fw-bold text-InfoTarjetaBusqueda mb-2">Listado de Restaurantes de la Zona</h6>
-                      </div>
-                      <!-- Card Body -->
-                      <div class="row">
-                        <div class="col-lg-6 mb-1 mt-1 m-0.5 mb-2" *ngFor="let nombre of nombresRestaurantes; let i=index;">
-                          <div class="card bg-cardsRestaurantes text-white shadow m-3">
-                            <div class="card-body">
-                              {{nombre}}
-                              <div class="text-white-50 small">Puntuación: {{valoracionesRestaurantes[i]}}</div>
-                              <div class="text-white-50 small">Tags: {{etiquetasRestaurantes[i]}}</div>
                             </div>
                           </div>
                         </div>
@@ -199,17 +229,20 @@
                   </div>
                 </div>
               </div>
-
-              <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
-          </div>
-          <!-- End of Content Wrapper -->
-        </div>
-        <!-- End of Page Wrapper -->
-      </div>
 
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+
+
 </body>
+
 </html>
