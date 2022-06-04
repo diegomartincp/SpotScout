@@ -1162,6 +1162,7 @@ section {
 }
 .navbar-padding-top {
   padding-top: 63px;
+
 }
 //Admin
 .tabla_bbdd {
@@ -1227,6 +1228,36 @@ section {
   width: 80%;
   height: 80%;
 }
-//Lista restaurantes
 
 
+//Administrador
+.todoAdministracion{
+
+  background: url("./assets/images/fondo (4).jpg") center center no-repeat;
+  background-size: cover;
+
+}
+
+.filtrarbusquedas{
+height: 95.4vh;
+}
+
+.querybusquedas{
+  height: 89vh;
+}
+.querywebScrappers{
+  height: 88.5vh;
+}
+
+
+.querybusquedasRecientes{
+  height: 88.5vh;
+}
+
+.validacionUsuarios{
+  height: 88.5vh;
+}
+
+.busquedacache{
+  height: 88.5vh;
+}

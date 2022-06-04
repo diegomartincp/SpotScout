@@ -1,4 +1,4 @@
-<div class="container-fluid navbar-padding-top ">
+<div class="container-fluid navbar-padding-top filtrarbusquedas">
   <div class="row flex-nowrap tamano_total">
     <!--Bara de navegacion vertical-->
     <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark tamano_total">
@@ -36,7 +36,7 @@
     </div>
 
     <!--Contenido de la página-->
-    <div class="col py-3 bg-image">
+    <div class="col py-3 todoAdministracion querybusquedas">
       <div class="row d-flex justify-content-center mt-3">
         <!-- Le cramos para centrar el resto haciendo de este un flex-->
         <div class="input-group p-3 w-50 input-group row row-cols-2 row-cols-md-3 g-2 my-1 m-5 align-items-center mt-5">
@@ -47,7 +47,7 @@
           </div>
         </div>
 
-        <div class="card tabla_bbdd_busqueda">
+        <div class="card tabla_bbdd_busqueda ">
           <table class="table table-striped">
             <thead>
               <tr>
@@ -64,7 +64,7 @@
               </tr>
             </thead>
 
-            <tbody>
+            <tbody >
               <tr *ngFor="let busqueda of array">
                 <th scope="row">{{busqueda['id']}}</th>
                 <td>{{busqueda['query']}}</td>
