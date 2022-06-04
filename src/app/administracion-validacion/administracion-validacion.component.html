@@ -1,64 +1,65 @@
 <div class="container-fluid navbar-padding-top ">
   <div class="row flex-nowrap tamano_total">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark tamano_total">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
-              <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                  <span class="fs-5 d-none d-sm-inline">Panel de administrador</span>
-              </a>
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                  <li class="nav-item">
+    <!--Bara de navegacion vertical-->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark tamano_total">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline">Panel de administrador</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item">
 
-                    <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_validacion" routerLinkActive="active-link-admin">
-                      <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Validacion de usuarios</span>
-                    </a>
+            <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_validacion" routerLinkActive="active-link-admin">
+              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Validacion de usuarios</span>
+            </a>
 
-                    <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin" routerLinkActive="active-link-admin">
-                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Búsquedas recientes</span>
-                    </a>
+            <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin" routerLinkActive="active-link-admin">
+                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Búsquedas recientes</span>
+            </a>
 
-                    <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_cache" routerLinkActive="active-link-admin">
-                      <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Elementos guardados en caché</span>
-                    </a>
+            <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_cache" routerLinkActive="active-link-admin">
+              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Elementos guardados en caché</span>
+            </a>
 
-                    <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_query" routerLinkActive="active-link-admin">
-                      <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Filtrar búsquedas</span>
-                    </a>
+            <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_query" routerLinkActive="active-link-admin">
+              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Filtrar búsquedas</span>
+            </a>
 
-                    <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_modificacionBBDD" routerLinkActive="active-link-admin">
-                      <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Modifcar web scrappers</span>
-                    </a>
-
-                  </li>
-              </ul>
-              <hr>
-          </div>
+            <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_modificacionBBDD" routerLinkActive="active-link-admin">
+              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Modifcar web scrappers</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
       </div>
-      <!--Contenido de la página-->
-      <div class="col py-3 bg-image">
-        <section class="">
-          <div class="card tabla_bbdd">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Fecha de registro</th>
-                  <th scope="col">Validar usuario</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let busqueda of array">
-                  <th scope="row">{{busqueda['name']}}</th>
-                  <td>{{busqueda['email']}}</td>
-                  <td>{{busqueda['created_at']}}</td>
-                  <td><button type="button" class="btn btn-outline-secondary btn-sm" (click)="validar( busqueda['id'] )">Validar</button></td>
-                </tr>
-              </tbody>
+    </div>
 
-            </table>
-          </div>
-        </section>
-      </div>
+    <!--Contenido de la página-->
+    <div class="col py-3 bg-image">
+      <section class="">
+        <div class="card tabla_bbdd">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fecha de registro</th>
+                <th scope="col">Validar usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let busqueda of array">
+                <th scope="row">{{busqueda['name']}}</th>
+                <td>{{busqueda['email']}}</td>
+                <td>{{busqueda['created_at']}}</td>
+                <td><button type="button" class="btn btn-outline-secondary btn-sm" (click)="validar( busqueda['id'] )">Validar</button></td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 

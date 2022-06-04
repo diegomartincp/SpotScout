@@ -28,7 +28,6 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
   }
   routing_busqueda(query:string){
-    //console.log(query);
     this.router.navigate(['/busqueda',query]);
   }
 

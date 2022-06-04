@@ -17,7 +17,7 @@ export class AccederComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  //Comprobar que se ha pulsado el boton de terminos de uso
   fieldsChange(values:any):void {
     console.log(values.currentTarget.checked);
     if(values.currentTarget.checked){
@@ -29,7 +29,7 @@ export class AccederComponent implements OnInit {
   }
 
   crear_usuario(nombre:string, correo:string, contrasena1:string, contrasena2:string, checkbox: string){
-    console.log("aa "+checkbox);
+
     if(contrasena1===contrasena2 && this.terminos){
       //Se registraconsole.log(token_);
       console.log("Vamos a registrar");

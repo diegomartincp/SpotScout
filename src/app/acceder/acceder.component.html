@@ -9,7 +9,6 @@
               <h2 class="text-uppercase text-center mb-4">Registrese</h2>
 
               <form>
-
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1cg">Nombre</label>
                   <input type="text" id="form3Example1cg" class="form-control form-control-lg" #nombre/>
@@ -31,7 +30,6 @@
                   <p><br></p>
                 </div>
 
-
                 <div class="form-check d-flex justify-content-center mb-5">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" #checkbox (change)="fieldsChange($event)"/>
                   <label class="form-check-label" for="form2Example3g">
@@ -40,7 +38,6 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <!--<a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" routerLink="/login"routerLinkActive="active-link" href="/login" role="button" click="crear_usuario(nombre, correo, contrasena)">Registrar</a>-->
                   <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" type="button" id="button-addon2" (click)="crear_usuario(nombre.value, correo.value, contrasena1.value, contrasena2.value, checkbox.value)">Registrarse</button>
                 </div>
 

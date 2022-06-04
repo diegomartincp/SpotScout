@@ -71,10 +71,7 @@ export class BusquedaComponent implements OnInit {
     this.service.servicio_busqueda(query).subscribe(data => {
 
 
-      if (this.myLineChart){
-        this.myLineChart.destroy();
-        console.log("graficaa")
-      }  //destroy del chart
+      if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
       if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
 
 
@@ -125,14 +122,9 @@ export class BusquedaComponent implements OnInit {
       this.tweets=String(this.tweets).replace('"', '').replace('[', '').replace(']', '');  //Quitamos todos los elementos del array " ] [
       var tweets_number_array = <Array<number>><unknown>this.tweets.split(","); //Convertimos la variable con el string en un array de number al castear
 
-      console.log("holaaa")
-
       //Generamos la gráfica de tweets
       this.grafica1 = '<canvas id="myAreaChart"></canvas>'
       this.chart_tweets(tweets_number_array);
-      console.log(tweets_number_array);
-
-      console.log("eey que pasa 2")
       //todo cargado cambiamos ruleta carga por datos
       this.tamano = 0
       Swal.close()

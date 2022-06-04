@@ -25,7 +25,7 @@ ejecutar: boolean=true;
       const token_ = localStorage.getItem('token');
       console.log(token_);
       if(token_ && data.user.validado){ //Si token valido y esta validado
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin_validacion']);
         this.ejecutar=false;
       }
       else{
@@ -47,8 +47,6 @@ ejecutar: boolean=true;
       text: 'Los datos no son correctos',
     })
     }
-
-    console.log("3");
   }
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
