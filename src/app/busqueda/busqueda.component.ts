@@ -4,6 +4,7 @@ import { ApiComunicationService } from '../api-comunication.service'; //Importam
 import { ActivatedRoute } from '@angular/router';
 import Chart from 'chart.js/auto';
 import Swal from "sweetalert2"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-busqueda',
@@ -39,7 +40,7 @@ export class BusquedaComponent implements OnInit {
   constructor(
     public service: ApiComunicationService,
     private _Activatedroute:ActivatedRoute,
-
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -55,7 +56,12 @@ export class BusquedaComponent implements OnInit {
 
   }
 
+  routing_busqueda(query:string){
+    this.router.navigate(['/busqueda',query]);
+  }
+
   funcion_general(query:string){
+    this.routing_busqueda(query)
     this.mostrar='visible'
     this.tamano = 8
     this.ciudad=query;
