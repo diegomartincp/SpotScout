@@ -25,6 +25,8 @@ export class BusquedaComponent implements OnInit {
   medioEsc = "";
 
   query:any=""
+  ciudad:string="";
+
   myLineChart: any;
   myPieChart:any;
   cargando: boolean = true;
@@ -47,14 +49,16 @@ export class BusquedaComponent implements OnInit {
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
       console.log(this.query);
+      this.ciudad=this.query;
       if(this.query){this.funcion_general(this.query)}
     });
+
   }
 
   funcion_general(query:string){
     this.mostrar='visible'
     this.tamano = 8
-
+    this.ciudad=query;
     Swal.fire({
       title: 'Realizando la busqueda',
       icon: 'info',
