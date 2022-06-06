@@ -135,6 +135,7 @@ export class BusquedaComponent implements OnInit {
       //Generamos la gráfica de tweets
       this.grafica1 = '<canvas id="myAreaChart"></canvas>'
       this.chart_tweets(tweets_number_array);
+      console.log("    aaaa    "+tweets_number_array)
       //todo cargado cambiamos ruleta carga por datos
       this.tamano = 0
       Swal.close()
