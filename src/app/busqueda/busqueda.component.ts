@@ -53,17 +53,11 @@ export class BusquedaComponent implements OnInit {
       this.ciudad=this.query;
       if(this.query){this.funcion_general(this.query)}
     });
-
   }
 
-  routing_busqueda(query:string){
-    this.router.navigate(['/busqueda',query]);
-  }
-
-  existe:boolean = false;
   funcion_general(query:string){
     console.log("una vez")
-    this.routing_busqueda(query)
+    history.pushState(null, "", "busqueda/"+query);
     this.mostrar='visible'
     this.tamano = 8
     this.ciudad=query;
@@ -71,7 +65,8 @@ export class BusquedaComponent implements OnInit {
 
     //comprobamos el nombre
 
-    var comprobado = this.service.servicio_comprobar_ciudad(query).subscribe(data => {
+    this.service.servicio_comprobar_ciudad(query).subscribe(data => {
+      console.log("api de comprobacion")
       if(data.length == 0){
         console.log(" no existe ")
         Swal.close()
@@ -98,7 +93,7 @@ export class BusquedaComponent implements OnInit {
         this.tweets= "";
         this.resultadoEsc = 0;
         this.service.servicio_busqueda(query).subscribe(data => {
-
+          console.log("api de busqueda")
 
           if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
           if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
