@@ -3,6 +3,7 @@
 /*Variables*/
 $gris_claro: #eeeeee;
 $azul_principal: #1c658c;
+$azul_principal_transparente: #1c658c15;
 $beige: #d8d2cb;
 
 
@@ -691,4 +692,14 @@ height: 95.4vh;
 
 .busquedacache{
   height: 88.5vh;
+}
+.tarjeta_redonda_index{
+text-align: center;
+border-radius: 10px;
+border-style: solid;
+border-color: $azul_principal;
+background: $azul_principal_transparente;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 40px 30px;
+width: 100%;
 }
