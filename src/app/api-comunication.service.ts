@@ -69,13 +69,24 @@ servicio_registro_user(nombre:string, correo:string, contrasena: string) : Obser
   return this.servicio_api.post<login_return>(url,body)
 }
 
+//Busqueda
 servicio_busqueda(query:string) : Observable<API_RETURN>{
   let ciudad = query.replace(" ","+")
   console.log(ciudad)
   let path ='http://127.0.0.1:8000/api/bbdd/?ciudad='+ciudad;
   console.log(path)
+
   return this.servicio_api.get<API_RETURN>(path)
 }
+servicio_comprobar_ciudad(query:string) : Observable<any>{
+  let ciudad = query.replace(" ","%20")
+  console.log(ciudad)
+  let path ='https://www.fotocasa.es/indice-precio-vivienda/ac/'+ciudad;
+  console.log(path)
+  return this.servicio_api.get<any>(path)
+}
+
+
 
 //Servicios del administrador
 servicio_select_busquedas() : Observable<busqueda>{
@@ -116,7 +127,6 @@ servicio_select_query(query:string) : Observable<busqueda>{
   return this.servicio_api.get<busqueda>(path,{ headers })
 }
 
-
 servicio_select_user() : Observable<busqueda>{
   const token_ = localStorage.getItem('token');
   const headers = { 'Authorization': 'Bearer '+token_}
@@ -126,7 +136,6 @@ servicio_select_user() : Observable<busqueda>{
   console.log(path)
   return this.servicio_api.get<busqueda>(path,{ headers })
 }
-
 
 servicio_update_user_validar(id:number) : Observable<busqueda>{
   const token_ = localStorage.getItem('token');

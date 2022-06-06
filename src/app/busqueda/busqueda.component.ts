@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NEVER } from 'rxjs';
+import { EMPTY, empty, NEVER } from 'rxjs';
 import { ApiComunicationService } from '../api-comunication.service'; //Importamos el servicio
 import { ActivatedRoute } from '@angular/router';
 import Chart from 'chart.js/auto';
@@ -49,7 +49,7 @@ export class BusquedaComponent implements OnInit {
     this.cargando=false;
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
-      console.log(this.query);
+     // console.log(this.query);
       this.ciudad=this.query;
       if(this.query){this.funcion_general(this.query)}
     });
@@ -60,87 +60,113 @@ export class BusquedaComponent implements OnInit {
     this.router.navigate(['/busqueda',query]);
   }
 
+  existe:boolean = false;
   funcion_general(query:string){
+    console.log("una vez")
     this.routing_busqueda(query)
     this.mostrar='visible'
     this.tamano = 8
     this.ciudad=query;
-    Swal.fire({
-      title: 'Realizando la busqueda',
-      icon: 'info',
-      html:
-        "<div class='spinner-border float-right text-primary' style='margin: 5px' role='status'></div>"
-    })
-
-    this.m2Esc = "";
-    this.medioEsc = "";
-    this.numVivVent = "";
-    this.numVivAlq = "";
-    this.tweets= "";
-    this.resultadoEsc = 0;
-    this.service.servicio_busqueda(query).subscribe(data => {
 
 
-      if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
-      if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
+    //comprobamos el nombre
+
+    var comprobado = this.service.servicio_comprobar_ciudad(query).subscribe(data => {
+      if(data.length == 0){
+        console.log(" no existe ")
+        Swal.close()
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'La ciudad no es valida',
+        });
+        this.router.navigate(['/busqueda']);
+        return;
+      }else{
+
+        Swal.fire({
+          title: 'Realizando la busqueda en '+data[0]['label'],
+          icon: 'info',
+          html:
+            "<div class='spinner-border float-right text-primary' style='margin: 5px' role='status'></div>"
+        })
+
+        this.m2Esc = "";
+        this.medioEsc = "";
+        this.numVivVent = "";
+        this.numVivAlq = "";
+        this.tweets= "";
+        this.resultadoEsc = 0;
+        this.service.servicio_busqueda(query).subscribe(data => {
 
 
-      //Sentimiento de odio
-      console.log(data.porcentaje_odio);
-      this.resultadoEsc = <number><unknown>data.porcentaje_odio;
-      var no_odio=1-this.resultadoEsc;
-      this.chart_odio(this.resultadoEsc,no_odio);
+          if (this.myLineChart) this.myLineChart.destroy(); //destroy del chart
+          if (this.myPieChart) this.myPieChart.destroy(); //destroy del chart
 
 
-      //Precio medio y M2
-      console.log(data.precio_m2);
-      console.log(data.precio_viviendas);
-      this.m2Esc = data.precio_m2 + " €/m2";
-      this.medioEsc = data.precio_viviendas+ " €";
+          //Sentimiento de odio
+          console.log(data.porcentaje_odio);
+          this.resultadoEsc = <number><unknown>data.porcentaje_odio;
+          var no_odio=1-this.resultadoEsc;
+          this.chart_odio(this.resultadoEsc,no_odio);
 
-      //Viviendas alquiler y venta
-      console.log(data.num_viviendas_venta);
-      console.log(data.num_viviendas_alquiler);
-      this.numVivVent = data.num_viviendas_venta;
-      this.numVivAlq = data.num_viviendas_alquiler;
 
-      //Los restaurantes tienen tres array de string: nombre, puntuacion, etiquetas
-      //Guardamos las variables con los string
-      var nombres=data.nombre;
-      var valoraciones=data.puntuacion;
-      var etiquetas=data.etiquetas;
+          //Precio medio y M2
+          console.log(data.precio_m2);
+          console.log(data.precio_viviendas);
+          this.m2Esc = data.precio_m2 + " €/m2";
+          this.medioEsc = data.precio_viviendas+ " €";
 
-      //castear a un array de strings
-      this.nombresRestaurantes=nombres.split("::"); //ahora recibimos un string y los nombres vienen delimitados por :: en vez de ,
-      this.valoracionesRestaurantes=valoraciones.split("::");
-      this.etiquetasRestaurantes=etiquetas.split("::");
-      console.log(this.nombresRestaurantes);
-      console.log(this.valoracionesRestaurantes);
-      console.log(this.etiquetasRestaurantes);
+          //Viviendas alquiler y venta
+          console.log(data.num_viviendas_venta);
+          console.log(data.num_viviendas_alquiler);
+          this.numVivVent = data.num_viviendas_venta;
+          this.numVivAlq = data.num_viviendas_alquiler;
 
-      //Para todos los elementos de los 3 array hacemos la limpieza de los elementos [, ], "
-      for(var i=0;i<this.nombresRestaurantes.length;i++){
-        this.nombresRestaurantes[i]=this.nombresRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
-        this.valoracionesRestaurantes[i]=this.valoracionesRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+          //Los restaurantes tienen tres array de string: nombre, puntuacion, etiquetas
+          //Guardamos las variables con los string
+          var nombres=data.nombre;
+          var valoraciones=data.puntuacion;
+          var etiquetas=data.etiquetas;
+
+          //castear a un array de strings
+          this.nombresRestaurantes=nombres.split("::"); //ahora recibimos un string y los nombres vienen delimitados por :: en vez de ,
+          this.valoracionesRestaurantes=valoraciones.split("::");
+          this.etiquetasRestaurantes=etiquetas.split("::");
+          console.log(this.nombresRestaurantes);
+          console.log(this.valoracionesRestaurantes);
+          console.log(this.etiquetasRestaurantes);
+
+          //Para todos los elementos de los 3 array hacemos la limpieza de los elementos [, ], "
+          for(var i=0;i<this.nombresRestaurantes.length;i++){
+            this.nombresRestaurantes[i]=this.nombresRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+            this.valoracionesRestaurantes[i]=this.valoracionesRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+          }
+          for(var i=0;i<this.etiquetasRestaurantes.length;i++){
+            this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+          }
+
+          //Convertir array de String de tweets a array de number
+          this.tweets= data.ultimos_100;
+          this.tweets=String(this.tweets).replace('"', '').replace('[', '').replace(']', '');  //Quitamos todos los elementos del array " ] [
+          var tweets_number_array = <Array<number>><unknown>this.tweets.split(","); //Convertimos la variable con el string en un array de number al castear
+
+          //Generamos la gráfica de tweets
+          this.grafica1 = '<canvas id="myAreaChart"></canvas>'
+          this.chart_tweets(tweets_number_array);
+          console.log("    aaaa    "+tweets_number_array)
+          //todo cargado cambiamos ruleta carga por datos
+          this.tamano = 0
+          Swal.close()
+
+        });
       }
-      for(var i=0;i<this.etiquetasRestaurantes.length;i++){
-        this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
-      }
-
-      //Convertir array de String de tweets a array de number
-      this.tweets= data.ultimos_100;
-      this.tweets=String(this.tweets).replace('"', '').replace('[', '').replace(']', '');  //Quitamos todos los elementos del array " ] [
-      var tweets_number_array = <Array<number>><unknown>this.tweets.split(","); //Convertimos la variable con el string en un array de number al castear
-
-      //Generamos la gráfica de tweets
-      this.grafica1 = '<canvas id="myAreaChart"></canvas>'
-      this.chart_tweets(tweets_number_array);
-      console.log("    aaaa    "+tweets_number_array)
-      //todo cargado cambiamos ruleta carga por datos
-      this.tamano = 0
-      Swal.close()
 
     });
+
+
+
+
 
   }
 //CHARTS
