@@ -201,26 +201,7 @@ chart_tweets(tweets: Number[]){
           bottom: 0
         }
       },
-      scales: {
-        y:{
-          //min: -1,
-          //max: 1,
-        },
-        xAxes: {
-          time: {
-            //unit: "minute"
-          },
-          ticks: {
-           maxTicksLimit: 7
-          }
-        },
-        yAxes: {
-          ticks: {
-           maxTicksLimit: 5,
-           padding: 10,
-          }
-        }
-      }
+
 
     }
   })
