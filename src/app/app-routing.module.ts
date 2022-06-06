@@ -9,6 +9,8 @@ import { AdministracionCacheComponent } from './administracion-cache/administrac
 import { AdministracionQueryComponent } from './administracion-query/administracion-query.component';
 import { AdministracionValidacionComponent } from './administracion-validacion/administracion-validacion.component';
 import { AdministracionModificarBBDDComponent } from './administracion-modificar-bbdd/administracion-modificar-bbdd.component';
+import { AdministracionGraficoBusquedasComponent } from './administracion-grafico-busquedas/administracion-grafico-busquedas.component';
+
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'admin_query', component: AdministracionQueryComponent },
   { path: 'admin_validacion', component: AdministracionValidacionComponent },
   { path: 'admin_modificacionBBDD', component: AdministracionModificarBBDDComponent },
+  { path: 'admin_grafica_busquedas', component: AdministracionGraficoBusquedasComponent },
   { path: '**',   redirectTo: '/index', pathMatch: 'full' }, //REDIRIGIR A INDEX
 ];
 

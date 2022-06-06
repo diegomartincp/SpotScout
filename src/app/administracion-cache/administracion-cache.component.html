@@ -29,26 +29,54 @@
                   <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Modifcar web scrappers</span>
                 </a>
 
+                <a href="#" class="nav-link align-middle px-0 link_principal_sin_decoracion" routerLink="/admin_grafica_busquedas" routerLinkActive="active-link-admin">
+                  <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Grafica busquedas</span>
+                </a>
+
               </li>
             </ul>
             <hr>
         </div>
     </div>
 
+    <!--Contenido de la página -->
     <div class="col py-0.5 todoAdministracion busquedacache">
-      <div class="h-100">
-        <div class="card shadow mb-4 w-100">
-          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 text-InfoTarjetaBusqueda fw-bold">Cantidad de busquedas de cada query</h6>
-          </div>
-          <div class="card-body">
-            <div class="chart-area pt-2 pb-2">
-              <canvas id="myBarChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <section class="">
+        <div class="card tabla_bbdd">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID Busqueda</th>
+                <th scope="col">Query</th>
+                <th scope="col">Precio M2</th>
+                <th scope="col">Precio medio</th>
+                <th scope="col">Viviendas venta</th>
+                <th scope="col">Viviendas alquiler</th>
+                <th scope="col">% odio</th>
+                <th scope="col">Nombres restaurantes</th>
+                <th scope="col">Puntuación restaurantes</th>
+                <th scope="col">Etiquetas restaurantes</th>
+              </tr>
+            </thead>
 
+            <tbody>
+              <tr *ngFor="let busqueda of array">
+                <th scope="row">{{busqueda['id']}}</th>
+                <td>{{busqueda['query']}}</td>
+                <td>{{busqueda['precio_m2']}}</td>
+                <td>{{busqueda['precio_viviendas']}}</td>
+                <td>{{busqueda['num_viviendas_venta']}}</td>
+                <td>{{busqueda['num_viviendas_alquiler']}}</td>
+                <td>{{busqueda['porcentaje_odio']}}</td>
+                <td style="font-size: 60%;">{{busqueda['nombre']}}</td>
+                <td style="font-size: 60%;">{{busqueda['puntuacion']}}</td>
+                <td style="font-size: 60%;">{{busqueda['etiquetas']}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
