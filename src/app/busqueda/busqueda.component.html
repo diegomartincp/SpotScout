@@ -4,7 +4,6 @@
   <div class="card fotoFondoBusqueda">
     <div class="card-body">
       <div id="wrapper">
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
           <div id="content">
 
@@ -24,6 +23,7 @@
 
             <div class="container-fluid mt-5" [style.filter]="'blur(' + tamano + 'px)'"> <!-- [style.visibility]="mostrar" -->
 
+              <!-- Muestra titulo con nombre de ciudad-->
               <div class="d-flex mb-4">
                 <h1 class="h3 mb-0 text-gray-800 mr-5">Datos obtenidos para {{ciudad}}</h1>
                 <div style="margin-left:15px">
@@ -43,9 +43,6 @@
                           <div class="text-xs text-primary text-uppercase mb-1 fw-bold" style="text-align: center;">Nº Viviendas en Alquiler</div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{ numVivAlq}}</div>
                         </div>
-                        <div class="col-auto">
-                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -61,9 +58,6 @@
                           </div>
                           <div class="text-xs text-success text-uppercase mb-1 fw-bold" style="text-align: center;">Nº Viviendas en Venta</div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center;">{{numVivVent}}</div>
-                        </div>
-                        <div class="col-auto">
-                          <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                         </div>
                       </div>
                     </div>
@@ -86,9 +80,6 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-auto">
-                          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -106,9 +97,6 @@
                             <p class="text-center fw-bold">{{ m2Esc }}</p>
                           </div>
                         </div>
-                        <div class="col-auto">
-                          <i class="fas fa-comments fa-2x text-gray-300"></i>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -121,7 +109,7 @@
                 <div class="col-xl-7 col-lg-7">
                   <div class="card shadow mb-4">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                      <h6 class="m-0 text-InfoTarjetaBusqueda fw-bold">Análisis de Sentimiento de los Últimos Tweets</h6>
+                      <h6 class="m-0 text-InfoTarjetaBusqueda fw-bold">Análisis de Sentimiento de los Tweets</h6>
                     </div>
                     <div class="card-body">
                       <div class="chart-area pt-4 pb-5">
@@ -162,7 +150,7 @@
                           <div class="row">
                             <div class="col-xl-12 col-lg-12 d-flex mt-3">
                               <div class="icon-boxes d-flex flex-column justify-content-center">
-                                <div class="row" *ngIf="nombresRestaurantes.length!=1" >
+                                <div class="row" *ngIf="nombresRestaurantes.length!=1 || listaRestaurante==1" >
                                   <div class="col-xl-3 d-flex align-items-stretch mb-2 bac" data-aos="fade-up"
                                     data-aos-delay="100" *ngFor="let nombre of nombresRestaurantes | slice:0:10; let i=index;">
                                     <div class="icon-box mt-4 mt-xl-0" style="height: 90%;">
@@ -185,14 +173,12 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
   </div>
 
 </body>

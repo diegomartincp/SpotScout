@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./busqueda.component.scss']
 })
 export class BusquedaComponent implements OnInit {
+  //Variables scrappers
   numVivVent: string = "";
   numVivAlq: string = "";
   tweets:string = "";
@@ -19,23 +20,22 @@ export class BusquedaComponent implements OnInit {
   valoracionesRestaurantes : string[] = [];
   etiquetasRestaurantes : string[] = [];
   imagenesRestaurantes : string[] = ["imagenRestaurante1.jpg","imagenRestaurante2.jpg","imagenRestaurante3.jpg","imagenRestaurante4.jpg","imagenRestaurante5.jpg","imagenRestaurante6.jpg","imagenRestaurante7.jpg","imagenRestaurante8.jpg","imagenRestaurante9.jpg","imagenRestaurante10.jpg"];
-
   resultadoEsc = 0;
-
   m2Esc = "";
   medioEsc = "";
 
+  //ciudad
   query:any=""
   ciudad:string="";
 
+  //graficas
   myLineChart: any;
   myPieChart:any;
-  cargando: boolean = true;
 
-  tweetsListo: boolean =false;
-  grafica1:string ="";
+  //solucion al fallo de restaurantes
+  listaRestaurante = 0;
+  //controlamos el blur del fondo
   tamano=8
-  mostrar='hidden'
 
   constructor(
     public service: ApiComunicationService,
@@ -44,27 +44,23 @@ export class BusquedaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.chart_odio();
+    //Mostra imagenes aleatorias
     this.imagenesRestaurantes.sort(()=> Math.random() - 0.5);
-    this.cargando=false;
+    //Cogemos el valor de la url cuando llegamos del home
     this._Activatedroute.paramMap.subscribe(params => {
       this.query = params.get('query');
-     // console.log(this.query);
       this.ciudad=this.query;
       if(this.query){this.funcion_general(this.query)}
     });
   }
 
   funcion_general(query:string){
-    console.log("una vez")
     history.pushState(null, "", "busqueda/"+query);
-    this.mostrar='visible'
+
     this.tamano = 8
     this.ciudad=query;
 
-
     //comprobamos el nombre
-
     this.service.servicio_comprobar_ciudad(query).subscribe(data => {
       console.log("api de comprobacion")
       if(data.length == 0){
@@ -78,20 +74,15 @@ export class BusquedaComponent implements OnInit {
         this.router.navigate(['/busqueda']);
         return;
       }else{
-
+        //Ventana que i¡nos indica que se esta realizando la busqueda
         Swal.fire({
-          title: 'Realizando la busqueda en '+data[0]['label'],
+          title: 'Realizando la busqueda en '+query,
           icon: 'info',
           html:
             "<div class='spinner-border float-right text-primary' style='margin: 5px' role='status'></div>"
         })
 
-        this.m2Esc = "";
-        this.medioEsc = "";
-        this.numVivVent = "";
-        this.numVivAlq = "";
-        this.tweets= "";
-        this.resultadoEsc = 0;
+        //si el nombre existe llamamos a la api para obtener los resultados
         this.service.servicio_busqueda(query).subscribe(data => {
           console.log("api de busqueda")
 
@@ -133,15 +124,17 @@ export class BusquedaComponent implements OnInit {
           console.log(this.etiquetasRestaurantes);
 
           //Para todos los elementos de los 3 array hacemos la limpieza de los elementos [, ], "
-          for(var i=0;i<this.nombresRestaurantes.length;i++){
-            this.nombresRestaurantes[i]=this.nombresRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
-            this.valoracionesRestaurantes[i]=this.valoracionesRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+          try{
+            for(var i=0;i<this.nombresRestaurantes.length;i++){
+              this.nombresRestaurantes[i]=this.nombresRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+              this.valoracionesRestaurantes[i]=this.valoracionesRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+            };
+            for(var i=0;i<this.etiquetasRestaurantes.length;i++){
+              this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
+            };
+          }catch{
+            this.listaRestaurante == 1
           }
-          for(var i=0;i<this.etiquetasRestaurantes.length;i++){
-            this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
-          }
-
-          console.log("aaaaaa     "+this.nombresRestaurantes.length)
 
           //Convertir array de String de tweets a array de number
           this.tweets= data.ultimos_100;
@@ -149,9 +142,7 @@ export class BusquedaComponent implements OnInit {
           var tweets_number_array = <Array<number>><unknown>this.tweets.split(","); //Convertimos la variable con el string en un array de number al castear
 
           //Generamos la gráfica de tweets
-          this.grafica1 = '<canvas id="myAreaChart"></canvas>'
           this.chart_tweets(tweets_number_array);
-          console.log("    aaaa    "+tweets_number_array)
           //todo cargado cambiamos ruleta carga por datos
           this.tamano = 0
           Swal.close()
@@ -207,7 +198,6 @@ chart_tweets(tweets: Number[]){
 
     }
   })
-  this.tweetsListo = true;
 
 }
 
