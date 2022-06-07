@@ -29,10 +29,18 @@ export class AccederComponent implements OnInit {
   }
 
   crear_usuario(nombre:string, correo:string, contrasena1:string, contrasena2:string, checkbox: string){
-
-    if(contrasena1===contrasena2 && this.terminos){
-      //Se registraconsole.log(token_);
+    //comprobar que todos los campos esten completos
+    if(nombre=="" || correo=="" || contrasena1==""||contrasena2==""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Rellene todos los campos',
+      })
+    }
+    //comprobar que las contraseñas coincidad y este aceptados los terminos y condiciones
+    else if(contrasena1===contrasena2 && this.terminos){
       console.log("Vamos a registrar");
+
       this.service.servicio_registro_user(nombre,correo,contrasena1).subscribe(data => {
         const token_ = localStorage.getItem('token');
         console.log(token_);
@@ -68,6 +76,7 @@ export class AccederComponent implements OnInit {
         text: 'Las contraseñas no coinciden',
       })
     }
+
 
   }
 }
