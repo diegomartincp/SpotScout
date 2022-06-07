@@ -162,7 +162,7 @@
                           <div class="row">
                             <div class="col-xl-12 col-lg-12 d-flex mt-3">
                               <div class="icon-boxes d-flex flex-column justify-content-center">
-                                <div class="row" *ngIf="nombresRestaurantes.length==0" >
+                                <div class="row" *ngIf="nombresRestaurantes.length!=1" >
                                   <div class="col-xl-3 d-flex align-items-stretch mb-2 bac" data-aos="fade-up"
                                     data-aos-delay="100" *ngFor="let nombre of nombresRestaurantes | slice:0:10; let i=index;">
                                     <div class="icon-box mt-4 mt-xl-0" style="height: 90%;">

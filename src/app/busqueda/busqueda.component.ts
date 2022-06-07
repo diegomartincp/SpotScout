@@ -141,6 +141,8 @@ export class BusquedaComponent implements OnInit {
             this.etiquetasRestaurantes[i]=this.etiquetasRestaurantes[i].replace('"', '').replace('"', '').replace('[', '').replace(']', '')
           }
 
+          console.log("aaaaaa     "+this.nombresRestaurantes.length)
+
           //Convertir array de String de tweets a array de number
           this.tweets= data.ultimos_100;
           this.tweets=String(this.tweets).replace('"', '').replace('[', '').replace(']', '');  //Quitamos todos los elementos del array " ] [
