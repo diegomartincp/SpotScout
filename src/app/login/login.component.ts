@@ -9,18 +9,19 @@ import Swal from "sweetalert2"
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-ejecutar: boolean=true;
+  ejecutar: boolean=true;
+
   constructor(
     public service: ApiComunicationService,
     private router: Router
   ) { }
+
   ngOnInit(): void {
   }
+
   async funcion_login_usuario(correo:string, contrasena:string){
     this.ejecutar=true;
-    console.log("1");
     const data = this.service.servicio_login_user(correo, contrasena).subscribe((data) => {
-      console.log("2");
       localStorage.setItem('token', data.authorisation.token);
       const token_ = localStorage.getItem('token');
       console.log(token_);
@@ -39,7 +40,7 @@ ejecutar: boolean=true;
         this.ejecutar=false;
       }
     });
-    await this.delay(1000);
+    await this.delay(1300);
     if(this.ejecutar){
     Swal.fire({
       icon: 'error',
