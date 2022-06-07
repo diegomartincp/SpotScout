@@ -28,6 +28,12 @@ export class AccederComponent implements OnInit {
     }
   }
 
+
+  validar_email( email:string ){
+    var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email) ? true : false;
+  }
+
   crear_usuario(nombre:string, correo:string, contrasena1:string, contrasena2:string, checkbox: string){
     //comprobar que todos los campos esten completos
     if(nombre=="" || correo=="" || contrasena1==""||contrasena2==""){
@@ -35,6 +41,13 @@ export class AccederComponent implements OnInit {
         icon: 'error',
         title: 'Oops...',
         text: 'Rellene todos los campos',
+      })
+      //comprobar email
+    }else if(!this.validar_email(correo)){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debe introducir un correo valido',
       })
     }
     //comprobar que las contraseñas coincidad y este aceptados los terminos y condiciones
