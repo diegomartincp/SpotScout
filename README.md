@@ -1,10 +1,13 @@
-# Trello
-https://trello.com/b/YZDvanV5/spotscout
 
-# Paleta de colores
+<h1>SpotScout
+<img src="src/assets/images/spotscout_logo.png" width="100" title="hover text"></h1>
+<br><br>
+
+
+## Paleta de colores
 https://colorhunt.co/palette/1c658c398ab9d8d2cbeeeeee
 
-# SpotScoutBeta
+## SpotScoutBeta
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
