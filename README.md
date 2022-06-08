@@ -2,9 +2,13 @@
 <h1>SpotScout
 <img src="src/assets/images/spotscout_logo.png" width="100" title="hover text"></h1>
 <br><br>
+<h1>Diseño de la BBDD</h1>
+<img src="diagrama_bbdd.png" width="auto" title="hover text">
 
+<h1>Componentes</h1>
+<img src="diagrama_componentes.png" width="auto" title="hover text">
 
-## Paleta de colores
+# Paleta de colores
 https://colorhunt.co/palette/1c658c398ab9d8d2cbeeeeee
 
 ## SpotScoutBeta
