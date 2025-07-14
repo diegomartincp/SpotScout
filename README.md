@@ -1,3 +1,4 @@
+Proyecto en ángular que expone una interfaz para hacer un análisis del precio de la vivienda en diferentes barrios junto con el uso de machine learning y acceso al API de X para realizar un análisis de sentimiento respecto a los post que referencian diferentes lugares del barrio
 
 <h1>SpotScout
 <img src="src/assets/images/spotscout_logo.png" width="100" title="hover text"></h1>
