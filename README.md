@@ -6,10 +6,10 @@
 
 <br><br>
 <h1>BBDD</h1>
-<img src="diagrama_bbdd.png" width="auto" title="hover text">
+<img src="diagrama_bbdd.jpg" width="auto" title="hover text">
 
 <h1>Components</h1>
-<img src="diagrama_componentes.png" width="auto" title="hover text">
+<img src="diagrama_componentes.jpg" width="auto" title="hover text">
 
 # Color palette
 https://colorhunt.co/palette/1c658c398ab9d8d2cbeeeeee
